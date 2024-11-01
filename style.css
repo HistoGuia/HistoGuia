@@ -1,3 +1,5 @@
+/*https://coolors.co/bebdbf-f7f6f8-7839cd-a67edc-120f1d-d0cdd5*/
+
 /* Reset básico */
 * {
     margin: 0;
@@ -104,110 +106,130 @@
 
 
 
-/* From Uiverse.io by Artahs */
+/* Estrutura e estilo principal dos cards */
 .themes-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 cards por linha em telas grandes */
     gap: 1.5rem;
-    flex-wrap: wrap;
     padding: 2rem;
+    justify-items: center;
   }
   
+  /* Configuração do contêiner individual de cada card */
+  .container {
+    width: 100%;
+    max-width: 190px;
+    height: 254px;
+    position: relative;
+  }
+  
+  /* Estilo do card com imagem de fundo e overlay de transparência */
   .card {
     position: relative;
-    width: 190px;
-    height: 254px;
-    background-color: #fff;
-    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                url('imagem.jpg') center/cover no-repeat;
+    border-radius: 8px;
+    color: #232323;
+    padding: 16px;
+    border: 1px solid #232323;
+    transition: all 0.5s ease-in-out;
     overflow: hidden;
-    transition: box-shadow 0.3s ease;
   }
   
-  .top-card {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    height: 65%;
-    background-image: url('imagem.jpg');
-    background-size: cover;
-    background-position: center;
-    transition: height 0.3s ease;
-  }
-  
-  .bottom-card {
-    border-top-right-radius: 3px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    height: 35%;
-    transition: height 0.3s ease;
-    background-color: #D3BAF5;
-  }
-  
-  .bottom-card::before {
-    content: "";
-    position: absolute;
-    background-color: transparent;
-    bottom: 89px;
-    height: 50px;
-    width: 175px;
-    transition: bottom 0.3s ease;
-    border-bottom-left-radius: 20px;
-    box-shadow: 0 30px 0 0 #D3BAF5;
-  }
-  
-  .card-content {
-    padding-top: 13%;
+  /* Estilo do conteúdo oculto no card */
+  .card-hidden {
     display: flex;
+    transform: translateY(200%);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffff;
+    gap: 0.5rem;
+    transition: transform 0.5s ease-in, opacity 0.3s ease-in;
+    opacity: 0;
+    z-index: 2;
   }
   
-  .card-title {
-    font-weight: 700;
-    font-size: 18px;
+  /* Bordas externas dos cards */
+  .card-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border: 1px dashed #232323;
+    border-radius: 8px;
+    z-index: -1;
   }
   
-  .card-txt {
-    font-size: 14px;
-    text-align: center;
-  }
-  
-  .card-btn {
-    font-size: 13px;
-    margin-top: 15%;
-    text-decoration: none;
-    color: white;
-    background-color: transparent;
-    border: solid 2px #fff;
-    border-radius: 15px;
-    padding: 5%;
-  }
-  
+  /* Efeitos de hover no card */
   .card:hover {
-    box-shadow: 0px 2px 2px #D3BAF5;
-    border: solid 1px #D3BAF5;
+    transform: translate(-15px, -15px);
+    border-color: #5bc0eb;
   }
   
-  .card:hover .top-card {
-    height: 35%;
-    transition: height 0.3s ease;
+  .card:hover .card-hidden {
+    transform: translateY(0);
+    opacity: 1;
   }
   
-  .card:hover .bottom-card {
-    height: 65%;
-    transition: height 0.3s ease;
+  .card:hover .title {
+    transform: translateY(200%);
   }
   
-  .card:hover .bottom-card::before {
-    bottom: 164px;
-    transition: bottom 0.3s ease;
+  /* Estilo do título */
+  .title {
+    position: absolute;
+    bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    transition: transform 0.25s ease-out;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    z-index: 2;
   }
   
-  .card-btn:hover {
-    color: black;
-    background-color: #7839CD;
-    transition: background-color 0.4s ease;
+  /* Estilo do título interno */
+  .title-in {
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+  
+  /* Estilo do botão */
+  .button {
+    display: inline-flex;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 24px;
+    font-weight: 600;
+    background-color: #5bc0eb;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Efeito de hover no botão */
+  .button:hover {
+    background-color: #53aed4;
+  }
+  
+  /* Responsividade para telas médias */
+  @media (max-width: 1024px) {
+    .themes-container {
+      grid-template-columns: repeat(3, 1fr); /* 3 cards por linha em telas médias */
+    }
+  }
+  
+  /* Responsividade para telas pequenas */
+  @media (max-width: 768px) {
+    .themes-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards por linha em telas pequenas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .themes-container {
+      grid-template-columns: 1fr; /* 1 card por linha em telas muito pequenas */
+    }
   }
   
