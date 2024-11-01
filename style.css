@@ -276,3 +276,34 @@
     }
   }
   
+/*Unavaliable Page*/
+  .unavailable-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  .unavailable-content h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .unavailable-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 1rem 0;
+  }
+  
+  .unavailable-content .button {
+    padding: 0.5rem 1rem;
+    background-color: #5bc0eb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  

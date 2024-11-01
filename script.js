@@ -1,20 +1,20 @@
+// script.js
+
 // Função de inicialização
 function init() {
-    const startButton = document.querySelector('.start-btn');
-    if (startButton) {
-      startButton.addEventListener('click', redirectToThemesPage);
-    }
+  const startButton = document.querySelector('.start-btn');
+  if (startButton) {
+    startButton.addEventListener('click', redirectToThemesPage);
   }
-  
-  // Função de redirecionamento
-  function redirectToThemesPage() {
-    window.location.href = 'temas.html';
-  }
-  
-  // Espera o carregamento do DOM
-  document.addEventListener('DOMContentLoaded', init);
+}
 
-  // script.js
+// Função de redirecionamento para a página de temas
+function redirectToThemesPage() {
+  window.location.href = 'temas.html';
+}
+
+// Espera o carregamento do DOM
+document.addEventListener('DOMContentLoaded', init);
 
 // Adiciona eventos de clique aos botões dos cards na página de temas
 document.addEventListener("DOMContentLoaded", function() {
@@ -40,12 +40,12 @@ document.addEventListener("DOMContentLoaded", function() {
           temaPath = "tecidos-adiposos";
           break;
         default:
-          console.error("Tema não encontrado");
+          // Redireciona para a página de tema indisponível
+          window.location.href = "unavailable.html";
           return;
       }
+      // Redireciona para a página do tema selecionado
       window.location.href = `temas/${temaPath}/modalidade.html`;
     });
   });
 });
-
-  
