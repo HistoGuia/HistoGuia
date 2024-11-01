@@ -307,3 +307,84 @@
     font-weight: bold;
   }
   
+
+  /* Container principal para centralizar os cards */
+.modalidade-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa toda a altura da viewport */
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Estilo do card com tamanhos maiores */
+.card-modalidade {
+  --border-radius-modalidade: 0.75rem;
+  --primary-color-modalidade: #7257fa;
+  --secondary-color-modalidade: #3c3852;
+  width: 500px; /* Aumenta a largura do card */
+  height: 250px; /* Aumenta a altura do card */
+  font-family: "Arial";
+  padding: 1.5rem;
+  cursor: pointer;
+  border-radius: var(--border-radius-modalidade);
+  background: #f1f1f3;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Mantém o conteúdo interno distribuído */
+}
+
+.card-modalidade > * + * {
+  margin-top: 1.1em;
+}
+
+.card-modalidade .card__content-modalidade {
+  color: var(--secondary-color-modalidade);
+  font-size: 1rem; /* Ajuste de tamanho da fonte */
+}
+
+.card-modalidade .card__title-modalidade {
+  padding: 0;
+  font-size: 1.5rem; /* Tamanho maior do título */
+  font-weight: bold;
+}
+
+.card-modalidade .card__date-modalidade {
+  color: #6e6b80;
+  font-size: 0.9rem;
+}
+
+.card-modalidade .card__arrow-modalidade {
+  position: absolute;
+  background: var(--primary-color-modalidade);
+  padding: 0.5rem;
+  border-top-left-radius: var(--border-radius-modalidade);
+  border-bottom-right-radius: var(--border-radius-modalidade);
+  bottom: 0;
+  right: 0;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-modalidade svg {
+  transition: 0.2s;
+}
+
+/* Hover Effect */
+.card-modalidade:hover .card__title-modalidade {
+  color: var(--primary-color-modalidade);
+  text-decoration: underline;
+}
+
+.card-modalidade:hover .card__arrow-modalidade {
+  background: #111;
+}
+
+.card-modalidade:hover .card__arrow-modalidade svg {
+  transform: translateX(3px);
+}
