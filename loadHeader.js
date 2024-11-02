@@ -31,3 +31,40 @@ function adjustNavLinks(baseURL) {
     }
   });
 }
+
+
+// loadHeader.js
+
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Iniciando o carregamento do header...");
+
+  // Carrega o header
+  fetch("/header.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Erro HTTP! status: ${response.status}`);
+      }
+      console.log("Header encontrado, carregando...");
+      return response.text();
+    })
+    .then((data) => {
+      const placeholder = document.getElementById("header-placeholder");
+      if (!placeholder) {
+        throw new Error("Elemento #header-placeholder não encontrado no DOM.");
+      }
+      placeholder.innerHTML = data;
+      console.log("Header carregado com sucesso.");
+
+      // Menu retrátil para mobile
+      const menuIcon = document.getElementById("menu-icon");
+      const menuItems = document.getElementById("menu-items");
+
+      if (menuIcon && menuItems) {
+        menuIcon.addEventListener("click", () => {
+          menuIcon.classList.toggle("active");
+          menuItems.style.display = menuItems.style.display === "flex" ? "none" : "flex";
+        });
+      }
+    })
+    .catch((error) => console.error("Erro ao carregar o header:", error));
+});

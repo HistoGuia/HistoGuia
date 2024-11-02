@@ -21,6 +21,7 @@ body {
 header {
   background-color: #f4f4f9;
   padding: 1rem;
+  border-bottom: 2px solid #a17ae0; /* Borda inferior */
 }
 
 .main-nav {
@@ -28,7 +29,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 1px solid #a17ae0; /* Borda inferior de 2px */
+  border-bottom: 1px solid #c6a1fb; /* Borda inferior de 2px */
 }
 
 .main-nav h1 {
@@ -53,6 +54,47 @@ header {
 
 .main-nav a:hover {
   color: #7839cd;
+}
+
+/* Ícone de menu (hamburger) para mobile */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* === Estilos para dispositivos móveis === */
+@media (max-width: 768px) {
+  .main-nav {
+    padding: 1rem;
+  }
+
+  /* Ícone de menu visível em mobile */
+  .menu-icon {
+    display: block;
+    color: #333;
+  }
+
+  /* Esconder itens de menu por padrão em telas pequenas */
+  #menu-items {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #f4f4f9;
+    position: absolute;
+    top: 60px; /* Ajuste para posicionar abaixo do header */
+    right: 10px;
+    width: 150px;
+    padding: 1rem;
+    border: 1px solid #a17ae0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Exibir menu em bloco quando ativo */
+  .menu-icon.active + #menu-items {
+    display: flex;
+  }
 }
 
 /* === Estilo do Rodapé === */
