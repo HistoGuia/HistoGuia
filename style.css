@@ -368,7 +368,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden; /* Limita o conteúdo dentro do cartão */
+  overflow: hidden;
 }
 
 .card-modalidade > * + * {
@@ -393,7 +393,7 @@ main {
 
 .card-modalidade .card__arrow-modalidade {
   position: absolute;
-  background: var(--primary-color-modalidade);
+  background: #000; /* Cor preta inicial */
   padding: 0.5rem;
   border-top-left-radius: var(--border-radius-modalidade);
   border-bottom-right-radius: var(--border-radius-modalidade);
@@ -407,20 +407,22 @@ main {
 
 .card-modalidade svg {
   transition: 0.2s;
+  fill: #000; /* Define cor preta inicial para o ícone SVG */
 }
 
 .card-modalidade:hover .card__title-modalidade {
   color: var(--primary-color-modalidade);
-  text-decoration: underline;
 }
 
 .card-modalidade:hover .card__arrow-modalidade {
-  background: #111;
+  background: var(--primary-color-modalidade); /* Muda para a cor roxa ao hover */
 }
 
 .card-modalidade:hover .card__arrow-modalidade svg {
-  transform: translateX(3px);
+  fill: var(--primary-color-modalidade); /* Muda a cor do SVG para roxa */
+  transform: translateX(3px); /* Efeito de movimento ao hover */
 }
+
 
 /* === Página de Quiz === */
 .quiz-container {
