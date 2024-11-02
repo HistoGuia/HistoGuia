@@ -1,24 +1,35 @@
-// loadHeader.js
-
 document.addEventListener("DOMContentLoaded", function() {
   console.log("Iniciando o carregamento do header...");
 
-  // Carrega o header a partir da raiz do projeto
-  fetch("/header.html") // Caminho absoluto para garantir que encontre o header.html
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Erro HTTP! status: ${response.status}`);
-      }
-      console.log("Header encontrado, carregando...");
-      return response.text();
-    })
-    .then(data => {
+  // Array de possíveis caminhos relativos para `header.html`
+  const paths = ["./header.html", "../header.html", "../../header.html"];
+  
+  let headerLoaded = false;
+
+  // Função para tentar carregar o header
+  async function loadHeader(path) {
+    try {
+      const response = await fetch(path);
+      if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+
+      const data = await response.text();
       const placeholder = document.getElementById("header-placeholder");
-      if (!placeholder) {
-        throw new Error("Elemento #header-placeholder não encontrado no DOM.");
-      }
+      if (!placeholder) throw new Error("Elemento #header-placeholder não encontrado no DOM.");
+      
       placeholder.innerHTML = data;
-      console.log("Header carregado com sucesso.");
-    })
-    .catch(error => console.error("Erro ao carregar o header:", error));
+      console.log("Header carregado com sucesso a partir de:", path);
+      headerLoaded = true; // Marca como carregado
+    } catch (error) {
+      console.error("Erro ao tentar carregar o header:", error);
+    }
+  }
+
+  // Itera sobre os caminhos possíveis até carregar com sucesso
+  (async function() {
+    for (const path of paths) {
+      if (headerLoaded) break; // Se já carregou, interrompe o loop
+      await loadHeader(path);
+    }
+    if (!headerLoaded) console.error("Falha ao carregar o header de todos os caminhos.");
+  })();
 });
