@@ -390,10 +390,41 @@
 }
 
 
+/* Estilo da estrutura principal do quiz */
 .quiz-container {
-  max-width: 800px;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa a altura total da tela */
   padding: 2rem;
+}
+
+.quiz-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Título do Quiz */
+.quiz-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Descrição do Quiz */
+.quiz-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.5; /* Melhor espaçamento entre linhas */
+}
+
+/* Estilo das Perguntas */
+#questions-list {
+  text-align: left;
+  margin: auto;
+  max-width: 600px;
 }
 
 .question {
@@ -407,6 +438,7 @@
   color: #333;
 }
 
+/* Estilo das Alternativas */
 .options {
   display: none;
   list-style-type: none;
@@ -423,16 +455,19 @@
   transition: background-color 0.3s;
 }
 
+/* Alternativa Correta */
 .options li.correct {
   background-color: #d4edda;
   color: #155724;
 }
 
+/* Alternativa Incorreta */
 .options li.incorrect {
   background-color: #f8d7da;
   color: #721c24;
 }
 
+/* Estilo da Explicação */
 .explanation {
   font-size: 0.9rem;
   color: #555;
