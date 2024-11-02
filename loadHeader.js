@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log("Iniciando o carregamento do header...");
 
   // Array de possíveis caminhos relativos para `header.html`
-  const paths = ["./header.html", "../header.html", "../../header.html"];
+  const paths = ["/HistoGuia/header.html", "../header.html", "../../header.html"];
   
   let headerLoaded = false;
 
