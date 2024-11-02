@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   console.log("Iniciando o carregamento do header...");
 
   const isGitHubPages = window.location.hostname.includes("github.io");
@@ -16,7 +16,10 @@ document.addEventListener("DOMContentLoaded", function() {
       if (!placeholder) throw new Error("Elemento #header-placeholder não encontrado no DOM.");
       placeholder.innerHTML = data;
       console.log("Header carregado com sucesso.");
-      adjustNavLinks(baseURL); // Ajusta os links de navegação após carregar o header
+      
+      // Após carregar o header, ajusta os links de navegação e adiciona funcionalidade ao menu mobile
+      adjustNavLinks(baseURL);
+      setupMobileMenu();
     })
     .catch(error => console.error("Erro ao carregar o header:", error));
 });
@@ -26,45 +29,24 @@ function adjustNavLinks(baseURL) {
   const navLinks = document.querySelectorAll(".main-nav a");
   navLinks.forEach(link => {
     const href = link.getAttribute("href");
-    if (href.startsWith("./")) {
-      link.setAttribute("href", `${baseURL}${href.substring(1)}`); // Concatena baseURL sem o ponto inicial
+    if (href && !href.startsWith("http") && !href.startsWith("#")) {
+      link.setAttribute("href", `${baseURL}/${href}`);
     }
   });
 }
 
+// Função para configurar o menu mobile retrátil
+function setupMobileMenu() {
+  const menuIcon = document.getElementById("menu-icon");
+  const menuItems = document.getElementById("menu-items");
 
-// loadHeader.js
-
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Iniciando o carregamento do header...");
-
-  // Carrega o header
-  fetch("/header.html")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Erro HTTP! status: ${response.status}`);
-      }
-      console.log("Header encontrado, carregando...");
-      return response.text();
-    })
-    .then((data) => {
-      const placeholder = document.getElementById("header-placeholder");
-      if (!placeholder) {
-        throw new Error("Elemento #header-placeholder não encontrado no DOM.");
-      }
-      placeholder.innerHTML = data;
-      console.log("Header carregado com sucesso.");
-
-      // Menu retrátil para mobile
-      const menuIcon = document.getElementById("menu-icon");
-      const menuItems = document.getElementById("menu-items");
-
-      if (menuIcon && menuItems) {
-        menuIcon.addEventListener("click", () => {
-          menuIcon.classList.toggle("active");
-          menuItems.style.display = menuItems.style.display === "flex" ? "none" : "flex";
-        });
-      }
-    })
-    .catch((error) => console.error("Erro ao carregar o header:", error));
-});
+  if (menuIcon && menuItems) {
+    menuIcon.addEventListener("click", () => {
+      const isMenuOpen = menuItems.style.display === "flex";
+      menuItems.style.display = isMenuOpen ? "none" : "flex";
+      menuIcon.classList.toggle("active", !isMenuOpen); // Alterna o estado ativo do ícone
+    });
+  } else {
+    console.warn("Elementos de menu mobile não encontrados.");
+  }
+}
