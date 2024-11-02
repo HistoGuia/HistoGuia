@@ -1,0 +1,122 @@
+[
+    {
+        "numero": 1,
+        "enunciado": "Qual é a função principal do tecido epitelial?",
+        "alternativas": [
+            {"texto": "Proteção do corpo", "explicacao": "Correto! O tecido epitelial fornece proteção ao corpo."},
+            {"texto": "Transporte de oxigênio", "explicacao": "Errado. Esse é o papel dos glóbulos vermelhos."},
+            {"texto": "Produção de energia", "explicacao": "Errado. Essa função é desempenhada principalmente pelas mitocôndrias em células musculares."},
+            {"texto": "Transmissão de impulsos nervosos", "explicacao": "Errado. Essa é uma função do tecido nervoso."},
+            {"texto": "Armazenamento de gordura", "explicacao": "Errado. Essa função é característica do tecido adiposo."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 2,
+        "enunciado": "Qual tipo de tecido epitelial reveste os vasos sanguíneos?",
+        "alternativas": [
+            {"texto": "Epitélio pavimentoso simples", "explicacao": "Correto! Esse tipo de epitélio reveste vasos sanguíneos."},
+            {"texto": "Epitélio cúbico simples", "explicacao": "Errado. O epitélio cúbico está mais associado a ductos de glândulas."},
+            {"texto": "Epitélio prismático simples", "explicacao": "Errado. O epitélio prismático é encontrado em áreas como o intestino."},
+            {"texto": "Epitélio estratificado", "explicacao": "Errado. O epitélio estratificado está presente na pele."},
+            {"texto": "Epitélio pseudoestratificado", "explicacao": "Errado. Esse epitélio é característico do trato respiratório."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 3,
+        "enunciado": "Onde o epitélio cúbico simples pode ser encontrado?",
+        "alternativas": [
+            {"texto": "Ductos de glândulas", "explicacao": "Correto! Esse epitélio está presente em ductos de glândulas."},
+            {"texto": "Vasos sanguíneos", "explicacao": "Errado. Vasos sanguíneos são revestidos por epitélio pavimentoso simples."},
+            {"texto": "Superfície da pele", "explicacao": "Errado. A pele possui epitélio estratificado."},
+            {"texto": "Intestino delgado", "explicacao": "Errado. O intestino é revestido por epitélio prismático."},
+            {"texto": "Pulmões", "explicacao": "Errado. O pulmão é revestido por epitélio pavimentoso simples."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 4,
+        "enunciado": "Qual é a principal característica do epitélio estratificado?",
+        "alternativas": [
+            {"texto": "Múltiplas camadas de células", "explicacao": "Correto! Esse tipo de epitélio possui várias camadas."},
+            {"texto": "Apenas uma camada de células", "explicacao": "Errado. Esse é o epitélio simples."},
+            {"texto": "Possui uma camada ciliada", "explicacao": "Errado. Nem todos epitélios estratificados possuem cílios."},
+            {"texto": "Produz secreção", "explicacao": "Errado. A função principal do epitélio estratificado é a proteção."},
+            {"texto": "Reveste vasos sanguíneos", "explicacao": "Errado. Vasos sanguíneos são revestidos pelo epitélio pavimentoso simples."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 5,
+        "enunciado": "Em qual órgão o epitélio de transição é encontrado?",
+        "alternativas": [
+            {"texto": "Bexiga", "explicacao": "Correto! A bexiga é revestida pelo epitélio de transição."},
+            {"texto": "Intestino", "explicacao": "Errado. O intestino é revestido por epitélio prismático."},
+            {"texto": "Coração", "explicacao": "Errado. O coração é revestido por endocárdio."},
+            {"texto": "Fígado", "explicacao": "Errado. O fígado é composto principalmente por hepatócitos."},
+            {"texto": "Pele", "explicacao": "Errado. A pele é revestida por epitélio estratificado."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 6,
+        "enunciado": "Qual tipo de epitélio possui células em formato de coluna?",
+        "alternativas": [
+            {"texto": "Epitélio prismático", "explicacao": "Correto! O epitélio prismático possui células em formato de coluna."},
+            {"texto": "Epitélio cúbico", "explicacao": "Errado. As células do epitélio cúbico têm formato cúbico."},
+            {"texto": "Epitélio pavimentoso", "explicacao": "Errado. O epitélio pavimentoso possui células achatadas."},
+            {"texto": "Epitélio de transição", "explicacao": "Errado. Esse tipo de epitélio muda de forma conforme o órgão se expande."},
+            {"texto": "Epitélio estratificado", "explicacao": "Errado. O epitélio estratificado é composto por várias camadas."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 7,
+        "enunciado": "Qual dessas funções não é desempenhada pelo tecido epitelial?",
+        "alternativas": [
+            {"texto": "Transmissão de impulsos nervosos", "explicacao": "Correto! Essa é a função do tecido nervoso."},
+            {"texto": "Proteção", "explicacao": "Errado. Proteção é uma função do tecido epitelial."},
+            {"texto": "Secreção", "explicacao": "Errado. O tecido epitelial realiza secreção em glândulas."},
+            {"texto": "Absorção", "explicacao": "Errado. Absorção é uma função do tecido epitelial no intestino."},
+            {"texto": "Filtração", "explicacao": "Errado. O tecido epitelial desempenha função de filtração nos rins."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 8,
+        "enunciado": "Qual é a principal função do epitélio glandular?",
+        "alternativas": [
+            {"texto": "Secreção de substâncias", "explicacao": "Correto! O epitélio glandular é responsável pela secreção de substâncias."},
+            {"texto": "Proteção contra agentes externos", "explicacao": "Errado. Essa é a função do epitélio estratificado."},
+            {"texto": "Transporte de nutrientes", "explicacao": "Errado. O transporte de nutrientes é função dos vasos sanguíneos."},
+            {"texto": "Produção de células imunológicas", "explicacao": "Errado. A produção de células imunológicas ocorre na medula óssea."},
+            {"texto": "Absorção de nutrientes", "explicacao": "Errado. A absorção de nutrientes ocorre no epitélio intestinal."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 9,
+        "enunciado": "Em qual parte do corpo encontramos epitélio pavimentoso simples?",
+        "alternativas": [
+            {"texto": "Alvéolos pulmonares", "explicacao": "Correto! Os alvéolos pulmonares são revestidos por epitélio pavimentoso simples."},
+            {"texto": "Túbulos renais", "explicacao": "Errado. Os túbulos renais possuem epitélio cúbico."},
+            {"texto": "Epiderme", "explicacao": "Errado. A epiderme é composta por epitélio estratificado."},
+            {"texto": "Vilosidades intestinais", "explicacao": "Errado. As vilosidades intestinais possuem epitélio prismático."},
+            {"texto": "Glândulas salivares", "explicacao": "Errado. As glândulas salivares possuem epitélio glandular."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 10,
+        "enunciado": "Qual estrutura epitelial é especializada na absorção de nutrientes?",
+        "alternativas": [
+            {"texto": "Vilosidades intestinais", "explicacao": "Correto! As vilosidades intestinais são responsáveis pela absorção de nutrientes."},
+            {"texto": "Alvéolos pulmonares", "explicacao": "Errado. Os alvéolos pulmonares são responsáveis pelas trocas gasosas."},
+            {"texto": "Cílios", "explicacao": "Errado. Cílios movem muco e partículas, não absorvem nutrientes."},
+            {"texto": "Microvilosidades renais", "explicacao": "Errado. Microvilosidades renais ajudam na filtração, não na absorção de nutrientes."},
+            {"texto": "Membrana basal", "explicacao": "Errado. A membrana basal dá suporte estrutural, mas não absorve nutrientes."}
+        ],
+        "respostaCorreta": 0
+    }
+]

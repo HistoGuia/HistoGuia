@@ -388,3 +388,54 @@
 .card-modalidade:hover .card__arrow-modalidade svg {
   transform: translateX(3px);
 }
+
+
+.quiz-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.question {
+  margin-bottom: 2rem;
+}
+
+.question-title {
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.options {
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.options li {
+  padding: 0.5rem;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.options li.correct {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.options li.incorrect {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.explanation {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+  display: none;
+}
