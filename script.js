@@ -81,10 +81,18 @@ function displayQuestions(questions, isPractical, listId) {
       image.alt = `Lâmina da Questão ${question.numero}`;
       image.classList.add('practical-image');
       
+      // Clique na imagem para exibir opções
+      image.onclick = () => toggleOptions(index, listId);
+      
       const zoomButton = document.createElement('button');
       zoomButton.classList.add('zoom-button');
       zoomButton.innerText = 'Ampliar';
-      zoomButton.onclick = () => openModal(image.src);
+      
+      // Clique no botão "Ampliar" para abrir o modal
+      zoomButton.onclick = (event) => {
+        event.stopPropagation(); // Impede o clique na imagem de acionar toggleOptions
+        openModal(image.src);
+      };
 
       imageContainer.appendChild(image);
       imageContainer.appendChild(zoomButton);
