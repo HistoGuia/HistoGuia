@@ -350,6 +350,7 @@ main {
   min-height: 100vh;
   gap: 2rem;
   padding: 2rem;
+  flex-wrap: wrap;
 }
 
 .card-modalidade {
@@ -369,6 +370,12 @@ main {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-modalidade:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-modalidade > * + * {
@@ -386,11 +393,6 @@ main {
   font-weight: bold;
 }
 
-.card-modalidade .card__date-modalidade {
-  color: #6e6b80;
-  font-size: 0.9rem;
-}
-
 .card-modalidade .card__arrow-modalidade {
   position: absolute;
   background: #000; /* Cor preta inicial */
@@ -405,21 +407,17 @@ main {
   align-items: center;
 }
 
-.card-modalidade svg {
-  transition: 0.2s;
-  fill: #000; /* Define cor preta inicial para o ícone SVG */
-}
-
-.card-modalidade:hover .card__title-modalidade {
-  color: var(--primary-color-modalidade);
-}
-
 .card-modalidade:hover .card__arrow-modalidade {
   background: var(--primary-color-modalidade); /* Muda para a cor roxa ao hover */
 }
 
-.card-modalidade:hover .card__arrow-modalidade svg {
-  fill: var(--primary-color-modalidade); /* Muda a cor do SVG para roxa */
+.card-modalidade svg {
+  fill: #000; /* Cor preta inicial do SVG */
+  transition: fill 0.2s, transform 0.2s;
+}
+
+.card-modalidade:hover svg {
+  fill: var(--primary-color-modalidade); /* Muda para roxo ao hover */
   transform: translateX(3px); /* Efeito de movimento ao hover */
 }
 
