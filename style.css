@@ -1,330 +1,316 @@
 /* https://coolors.co/bebdbf-f7f6f8-7839cd-a67edc-120f1d-d0cdd5 */
-/* Reset básico */
+
+/* === Reset básico === */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Estilos do corpo e estrutura da página */
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f4f4f9; /* Cor de fundo do body */
-    color: #333;
-  }
-  
-  header {
-    background-color: #f4f4f9; /* Cor de fundo do header igual ao body */
-    padding: 1rem;
-  }
-  
-  /* Estilo do Header */
-  .main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-  }
-  
-  .main-nav h1 {
-    font-size: 1.5rem;
-    color: #333; /* Ajuste da cor do texto para contraste */
-    margin: 0;
-  }
-  
-  /* Estilo dos itens de navegação */
-  .main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-  }
-  
-  .main-nav a {
-    color: #333; /* Ajuste da cor dos links para combinar com o esquema de cores */
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .main-nav a:hover {
-    color: #7839cd; /* Cor de destaque ao passar o mouse */
-  }
-  
-  /* Estilo do Rodapé */
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  footer p {
-    margin: 0;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
+/* === Estilo do Corpo === */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* === Estilo do Header === */
+header {
+  background-color: #f4f4f9;
+  padding: 1rem;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.main-nav h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.main-nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #7839cd;
+}
+
+/* === Estilo do Rodapé === */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* === Estilo do Conteúdo Principal === */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.image-section img {
+  max-width: 200px;
+  border-radius: 8px;
+}
+
+.text-section {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-section p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+}
+
+/* === Estilo do Botão Iniciar === */
+.start-btn {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-btn:hover {
+  background-color: #555;
+}
+
+/* === Responsividade Geral === */
+@media (max-width: 768px) {
   main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
+    padding: 1rem;
   }
-  
+
   .content-container {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
-  
+
   .image-section img {
-    max-width: 200px;
-    border-radius: 8px;
+    max-width: 150px;
   }
-  
-  .text-section {
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
+
   .text-section p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
-    text-align: center;
-  }
-  
-  .start-btn {
-    padding: 0.8rem 1.2rem;
     font-size: 1rem;
-    color: #fff;
-    background-color: #333;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .start-btn:hover {
-    background-color: #555;
-  }
-  
-  /* Responsividade para dispositivos móveis */
-  @media (max-width: 768px) {
-    main {
-      padding: 1rem;
-    }
-  
-    .content-container {
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
-    }
-  
-    .image-section img {
-      max-width: 150px;
-    }
-  
-    .text-section p {
-      font-size: 1rem;
-    }
-  
-    .start-btn {
-      width: 100%;
-      max-width: 200px;
-    }
   }
 
+  .start-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
 
-
-/* Estrutura e estilo principal dos cards */
+/* === Estilos dos Cards na Página de Temas === */
 .themes-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 cards por linha em telas grandes */
-    gap: 1.5rem;
-    padding: 2rem;
-    justify-items: center;
-  }
-  
-  /* Configuração do contêiner individual de cada card */
-  .container {
-    width: 100%;
-    max-width: 190px;
-    height: 254px;
-    position: relative;
-  }
-  
-  /* Estilo do card com imagem de fundo e overlay de transparência */
-  .card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-                url('imagem.jpg') center/cover no-repeat;
-    border-radius: 8px;
-    color: #232323;
-    padding: 16px;
-    border: 1px solid #232323;
-    transition: all 0.5s ease-in-out;
-    overflow: hidden;
-  }
-  
-  /* Estilo do conteúdo oculto no card */
-  .card-hidden {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    gap: 0.5rem;
-    transform: translateY(200%);
-    transition: transform 0.5s ease-in, opacity 0.3s ease-in;
-    opacity: 0;
-    z-index: 2;
-    height: 100%;
-    text-align: center;
-  }
-  
-  /* Bordas externas dos cards */
-  .card-border {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    border: 1px dashed #232323;
-    border-radius: 8px;
-    z-index: -1;
-  }
-  
-  /* Efeitos de hover no card */
-  .card:hover {
-    transform: translate(-15px, -15px);
-    border-color: #A67EDC;
-  }
-  
-  .card:hover .card-hidden {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  
-  .card:hover .title {
-    transform: translateY(200%);
-  }
-  
-  /* Estilo do título */
-  .title {
-    position: absolute;
-    bottom: 1rem;
-    font-weight: 700;
-    font-size: 1.5rem;
-    transition: transform 0.25s ease-out;
-    color: #fff;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-    z-index: 2;
-  }
-  
-  /* Estilo do título interno */
-  .title-in {
-    font-weight: 700;
-    font-size: 1.25rem;
-  }
-  
-  /* Estilo do botão */
-  .button {
-    display: inline-flex;
-    justify-content: center;
-    padding: 8px;
-    border-radius: 24px;
-    font-weight: 600;
-    background-color: #5bc0eb;
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  /* Efeito de hover no botão */
-  .button:hover {
-    background-color: #aa2b75;
-  }
-  
-  /* Responsividade para telas médias */
-  @media (max-width: 1024px) {
-    .themes-container {
-      grid-template-columns: repeat(3, 1fr); /* 3 cards por linha em telas médias */
-    }
-  }
-  
-  /* Responsividade para telas pequenas */
-  @media (max-width: 768px) {
-    .themes-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 cards por linha em telas pequenas */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .themes-container {
-      grid-template-columns: 1fr; /* 1 card por linha em telas muito pequenas */
-    }
-  }
-  
-/*Unavaliable Page*/
-  .unavailable-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-  }
-  
-  .unavailable-content h1 {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .unavailable-content p {
-    font-size: 1.2rem;
-    color: #555;
-    margin: 1rem 0;
-  }
-  
-  .unavailable-content .button {
-    padding: 0.5rem 1rem;
-    background-color: #5bc0eb;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-items: center;
+}
 
-  /* Container principal para centralizar os cards */
+.container {
+  width: 100%;
+  max-width: 190px;
+  height: 254px;
+  position: relative;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('imagem.jpg') center/cover no-repeat;
+  border-radius: 8px;
+  color: #232323;
+  padding: 16px;
+  border: 1px solid #232323;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.card-hidden {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateY(200%);
+  transition: transform 0.5s ease-in, opacity 0.3s ease-in;
+  opacity: 0;
+  z-index: 2;
+  height: 100%;
+  text-align: center;
+}
+
+.card-border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border: 1px dashed #232323;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: translate(-15px, -15px);
+  border-color: #a67edc;
+}
+
+.card:hover .card-hidden {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card:hover .title {
+  transform: translateY(200%);
+}
+
+.title {
+  position: absolute;
+  bottom: 1rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: transform 0.25s ease-out;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.title-in {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 24px;
+  font-weight: 600;
+  background-color: #5bc0eb;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #aa2b75;
+}
+
+/* === Responsividade dos Cards === */
+@media (max-width: 1024px) {
+  .themes-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .themes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .themes-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Página Unavailable === */
+.unavailable-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.unavailable-content h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.unavailable-content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 1rem 0;
+}
+
+.unavailable-content .button {
+  padding: 0.5rem 1rem;
+  background-color: #5bc0eb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* === Página de Seleção de Modalidade === */
 .modalidade-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ocupa toda a altura da viewport */
+  min-height: 100vh;
   gap: 2rem;
   padding: 2rem;
 }
 
-/* Estilo do card com tamanhos maiores */
 .card-modalidade {
   --border-radius-modalidade: 0.75rem;
   --primary-color-modalidade: #7257fa;
   --secondary-color-modalidade: #3c3852;
-  width: 500px; /* Aumenta a largura do card */
-  height: 250px; /* Aumenta a altura do card */
+  width: 500px;
+  height: 250px;
   font-family: "Arial";
   padding: 1.5rem;
   cursor: pointer;
@@ -334,7 +320,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Mantém o conteúdo interno distribuído */
+  justify-content: space-between;
 }
 
 .card-modalidade > * + * {
@@ -343,12 +329,12 @@
 
 .card-modalidade .card__content-modalidade {
   color: var(--secondary-color-modalidade);
-  font-size: 1rem; /* Ajuste de tamanho da fonte */
+  font-size: 1rem;
 }
 
 .card-modalidade .card__title-modalidade {
   padding: 0;
-  font-size: 1.5rem; /* Tamanho maior do título */
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -375,7 +361,6 @@
   transition: 0.2s;
 }
 
-/* Hover Effect */
 .card-modalidade:hover .card__title-modalidade {
   color: var(--primary-color-modalidade);
   text-decoration: underline;
@@ -389,13 +374,12 @@
   transform: translateX(3px);
 }
 
-
-/* Estilo da estrutura principal do quiz */
+/* === Página de Quiz === */
 .quiz-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ocupa a altura total da tela */
+  min-height: 100vh;
   padding: 2rem;
 }
 
@@ -404,7 +388,6 @@
   text-align: center;
 }
 
-/* Título do Quiz */
 .quiz-title {
   font-size: 2rem;
   font-weight: bold;
@@ -412,15 +395,13 @@
   margin-bottom: 0.5rem;
 }
 
-/* Descrição do Quiz */
 .quiz-description {
   font-size: 1rem;
   color: #555;
   margin-bottom: 2rem;
-  line-height: 1.5; /* Melhor espaçamento entre linhas */
+  line-height: 1.5;
 }
 
-/* Estilo das Perguntas */
 #questions-list {
   text-align: left;
   margin: auto;
@@ -438,7 +419,6 @@
   color: #333;
 }
 
-/* Estilo das Alternativas */
 .options {
   display: none;
   list-style-type: none;
@@ -455,19 +435,16 @@
   transition: background-color 0.3s;
 }
 
-/* Alternativa Correta */
 .options li.correct {
   background-color: #d4edda;
   color: #155724;
 }
 
-/* Alternativa Incorreta */
 .options li.incorrect {
   background-color: #f8d7da;
   color: #721c24;
 }
 
-/* Estilo da Explicação */
 .explanation {
   font-size: 0.9rem;
   color: #555;
