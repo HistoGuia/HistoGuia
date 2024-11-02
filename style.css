@@ -28,6 +28,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  border-bottom: 1px solid #a17ae0; /* Borda inferior de 2px */
 }
 
 .main-nav h1 {
