@@ -356,7 +356,7 @@ main {
   --border-radius-modalidade: 0.75rem;
   --primary-color-modalidade: #7257fa;
   --secondary-color-modalidade: #3c3852;
-  width: 500px;
+  width: 350px;
   height: 250px;
   font-family: "Arial";
   padding: 1.5rem;
@@ -368,6 +368,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden; /* Limita o conteúdo dentro do cartão */
 }
 
 .card-modalidade > * + * {
@@ -523,4 +524,57 @@ main {
   .practical-image {
     width: 90%; /* Ajusta o tamanho para dispositivos menores */
   }
+}
+
+
+/* Estilos para o cartão Flash Cards na página de modalidade */
+.flashcards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.flashcard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 80px; /* Ajuste de altura para caber dentro do card */
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; /* Centraliza o flashcard dentro do container */
+}
+
+.flashcard-teorico {
+  background-color: #f43f5e;
+}
+
+.flashcard-pratico {
+  background-color: #3b82f6;
+}
+
+.flashcard p.tip {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.flashcard p.second-text {
+  font-size: 0.75em;
+}
+
+.flashcard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.flashcards-container:hover > .flashcard:not(:hover) {
+  filter: blur(5px);
+  transform: scale(0.95);
 }
