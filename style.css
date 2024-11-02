@@ -498,3 +498,29 @@ main {
   margin-top: 0.5rem;
   display: none;
 }
+
+
+/* Estilos para as imagens de questões práticas */
+.practical-image {
+  display: block;
+  max-width: 100%;
+  width: 80%; /* Para deixar um pouco de margem nas laterais em telas maiores */
+  margin: 0 auto; /* Centraliza a imagem */
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover para aumentar levemente a imagem em telas grandes */
+@media (min-width: 768px) {
+  .practical-image:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .practical-image {
+    width: 90%; /* Ajusta o tamanho para dispositivos menores */
+  }
+}

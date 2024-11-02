@@ -1,0 +1,36 @@
+[
+    {
+      "numero": 1,
+      "imagem": "Histology-Guide-001.jpg",
+      "alternativas": [
+        {"texto": "Epitélio Pavimentoso Simples", "explicacao": "Correto! Esse epitélio é formado por uma única camada de células achatadas."},
+        {"texto": "Epitélio Cúbico Simples", "explicacao": "Errado. O epitélio cúbico é formado por células em formato de cubo."},
+        {"texto": "Epitélio Estratificado", "explicacao": "Errado. O epitélio estratificado tem várias camadas de células."},
+        {"texto": "Epitélio Pseudoestratificado", "explicacao": "Errado. O epitélio pseudoestratificado parece ter camadas, mas todas as células tocam a lâmina basal."}
+      ],
+      "respostaCorreta": 0
+    },
+    {
+      "numero": 2,
+      "imagem": "Histology-Guide-002.jpg",
+      "alternativas": [
+        {"texto": "Epitélio Cúbico Simples", "explicacao": "Correto! Esse tipo de epitélio é formado por uma única camada de células cúbicas."},
+        {"texto": "Epitélio Pavimentoso Simples", "explicacao": "Errado. O epitélio pavimentoso é formado por células achatadas."},
+        {"texto": "Epitélio Estratificado", "explicacao": "Errado. O epitélio estratificado tem várias camadas de células."},
+        {"texto": "Epitélio Pseudoestratificado", "explicacao": "Errado. Esse epitélio parece estratificado, mas todas as células tocam a lâmina basal."}
+      ],
+      "respostaCorreta": 0
+    },
+    {
+      "numero": 3,
+      "imagem": "Histology-Guide-003.jpg",
+      "alternativas": [
+        {"texto": "Epitélio Colunar Simples", "explicacao": "Correto! Esse epitélio é formado por células altas e retangulares."},
+        {"texto": "Epitélio Pavimentoso Simples", "explicacao": "Errado. O epitélio pavimentoso é formado por células achatadas."},
+        {"texto": "Epitélio Estratificado", "explicacao": "Errado. O epitélio estratificado possui várias camadas de células."},
+        {"texto": "Epitélio Cúbico Simples", "explicacao": "Errado. O epitélio cúbico tem células em formato de cubo."}
+      ],
+      "respostaCorreta": 0
+    }
+  ]
+  

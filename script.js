@@ -1,6 +1,6 @@
 // script.js
 
-// Função de inicialização
+// Função de inicialização para redirecionamento inicial
 function init() {
   const startButton = document.querySelector('.start-btn');
   if (startButton) {
@@ -16,78 +16,79 @@ function redirectToThemesPage() {
 // Espera o carregamento do DOM
 document.addEventListener('DOMContentLoaded', init);
 
-// Adiciona eventos de clique aos botões dos cards na página de temas
+// Configuração de redirecionamento para cada card de tema
 document.addEventListener("DOMContentLoaded", function() {
   const cards = document.querySelectorAll(".container .button");
 
   cards.forEach((button, index) => {
     button.addEventListener("click", () => {
-      let temaPath;
-      switch (index) {
-        case 0:
-          temaPath = "tecidos-epiteliais";
-          break;
-        case 1:
-          temaPath = "tecidos-conjuntivos";
-          break;
-        case 2:
-          temaPath = "tecidos-musculares";
-          break;
-        case 3:
-          temaPath = "tecidos-nervosos";
-          break;
-        case 4:
-          temaPath = "tecidos-adiposos";
-          break;
-        default:
-          // Redireciona para a página de tema indisponível
-          window.location.href = "unavailable.html";
-          return;
-      }
-      // Redireciona para a página do tema selecionado
-      window.location.href = `temas/${temaPath}/modalidade.html`;
+      const temaPaths = [
+        "tecidos-epiteliais",
+        "tecidos-conjuntivos",
+        "tecidos-musculares",
+        "tecidos-nervosos",
+        "tecidos-adiposos"
+      ];
+      const temaPath = temaPaths[index] || "unavailable";
+      window.location.href = temaPath === "unavailable" ? "unavailable.html" : `temas/${temaPath}/modalidade.html`;
     });
   });
 });
 
+// Carregamento do JSON de acordo com a página (questões teóricas ou práticas)
+document.addEventListener("DOMContentLoaded", function() {
+  const pageTitle = document.title;
 
-// Função para carregar o JSON e exibir as questões
-async function loadQuestions() {
+  if (pageTitle.includes("Questões sobre Tecido Epitelial")) {
+    loadQuestions('questoes.json', false, 'questions-list');
+  } else if (pageTitle.includes("Questões Práticas sobre Tecido Epitelial")) {
+    loadQuestions('questoes-praticas.json', true, 'practical-questions-list');
+  }
+});
+
+// Função para carregar e exibir as questões a partir de um JSON
+async function loadQuestions(jsonFile, isPractical, listId) {
   try {
-    console.log("Carregando JSON...");
-    const response = await fetch('questoes.json'); // Caminho relativo para JSON na mesma pasta
-    if (!response.ok) {
-      throw new Error(`Erro ao carregar o arquivo JSON: ${response.status}`);
-    }
+    const response = await fetch(jsonFile);
+    if (!response.ok) throw new Error(`Erro ao carregar o arquivo JSON: ${response.status}`);
+    
     const questions = await response.json();
-    console.log("JSON carregado com sucesso:", questions); // Confirma o conteúdo do JSON
-    displayQuestions(questions);
+    displayQuestions(questions, isPractical, listId);
   } catch (error) {
     console.error("Erro ao carregar as questões:", error);
   }
 }
 
-// Função para exibir as questões na página
-function displayQuestions(questions) {
-  const questionsList = document.getElementById('questions-list');
+// Função para exibir as questões (teóricas ou práticas)
+function displayQuestions(questions, isPractical, listId) {
+  const questionsList = document.getElementById(listId);
   if (!questionsList) {
-    console.error("Elemento 'questions-list' não encontrado no DOM.");
+    console.error(`Elemento '${listId}' não encontrado no DOM.`);
     return;
   }
 
   questions.forEach((question, index) => {
-    console.log("Exibindo questão:", question);
-
     const questionElement = document.createElement('div');
     questionElement.classList.add('question');
 
-    // Título da questão
-    const title = document.createElement('h3');
-    title.innerText = `${question.numero}. ${question.enunciado}`;
-    title.classList.add('question-title');
-    title.onclick = () => toggleOptions(index);
+    if (isPractical) {
+      // Exibir imagem para questões práticas
+      const image = document.createElement('img');
+      image.src = `laminas/${question.imagem}`;
+      image.alt = `Lâmina da Questão ${question.numero}`;
+      image.classList.add('practical-image');
+      image.onclick = () => toggleOptions(index, listId);
+      questionElement.appendChild(image);
+    } else {
+      // Exibir título para questões teóricas
+      const title = document.createElement('h3');
+      title.innerText = `${question.numero}. ${question.enunciado}`;
+      title.classList.add('question-title');
+      title.onclick = () => toggleOptions(index, listId);
+      questionElement.appendChild(title);
+    }
 
-    // Alternativas
+    // Criação das alternativas
     const optionsList = document.createElement('ul');
     optionsList.id = `options-${index}`;
     optionsList.classList.add('options');
@@ -98,13 +99,12 @@ function displayQuestions(questions) {
       optionsList.appendChild(optionElement);
     });
 
-    // Elemento para exibição da explicação
+    // Elemento para a explicação
     const explanationElement = document.createElement('div');
     explanationElement.id = `explanation-${index}`;
     explanationElement.classList.add('explanation');
 
     // Adiciona os elementos à questão
-    questionElement.appendChild(title);
     questionElement.appendChild(optionsList);
     questionElement.appendChild(explanationElement);
     questionsList.appendChild(questionElement);
@@ -112,7 +112,7 @@ function displayQuestions(questions) {
 }
 
 // Função para alternar a exibição das alternativas e ocultar a explicação ao retraí-las
-function toggleOptions(questionIndex) {
+function toggleOptions(questionIndex, listId) {
   const options = document.getElementById(`options-${questionIndex}`);
   const explanation = document.getElementById(`explanation-${questionIndex}`);
 
@@ -121,11 +121,9 @@ function toggleOptions(questionIndex) {
     return;
   }
 
-  // Alterna a exibição das alternativas
   const isVisible = options.style.display === 'block';
   options.style.display = isVisible ? 'none' : 'block';
   
-  // Oculta a explicação se as alternativas forem retraídas
   if (isVisible) {
     explanation.style.display = 'none';
   }
@@ -146,6 +144,3 @@ function checkAnswer(questionIndex, selectedOptionIndex, correctAnswerIndex, exp
   explanationElement.style.display = 'block';
   explanationElement.innerText = explanationText;
 }
-
-// Carrega as questões ao iniciar a página
-document.addEventListener("DOMContentLoaded", loadQuestions);
