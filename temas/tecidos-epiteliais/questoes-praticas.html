@@ -15,7 +15,7 @@
   <main class="quiz-container">
     <div class="quiz-content">
       <!-- Nome do Tema -->
-      <h1 class="quiz-title">Tecido Epitelial</h1>
+      <h1 class="quiz-title">Tecido Epitelial - Questões Práticas</h1>
       
       <!-- Parágrafo descritivo -->
       <p class="quiz-description">
@@ -23,13 +23,18 @@
       </p>
       
       <!-- Lista de Questões -->
-      <div id="practical-questions-list"></div> <!-- Local onde as questões práticas serão carregadas -->
+      <div id="practical-questions-list"></div> <!-- Local onde as questões serão carregadas -->
     </div>
   </main>
 
-  <!-- Script para carregar o header -->
+  <!-- Modal para exibir imagem ampliada -->
+  <div id="image-modal" class="image-modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-image">
+  </div>
+
+  <!-- Scripts -->
   <script src="../../loadHeader.js"></script>
-  <!-- Script para carregar as questões práticas -->
   <script src="../../script.js"></script>
 </body>
 </html>

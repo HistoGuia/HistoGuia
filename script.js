@@ -59,7 +59,7 @@ async function loadQuestions(jsonFile, isPractical, listId) {
   }
 }
 
-// Função para exibir as questões (teóricas ou práticas)
+// Função para exibir as questões (teóricas ou práticas) com botão "Ampliar" nas práticas
 function displayQuestions(questions, isPractical, listId) {
   const questionsList = document.getElementById(listId);
   if (!questionsList) {
@@ -69,16 +69,26 @@ function displayQuestions(questions, isPractical, listId) {
 
   questions.forEach((question, index) => {
     const questionElement = document.createElement('div');
-    questionElement.classList.add('question');
+    questionElement.classList.add(isPractical ? 'question-practical' : 'question');
 
     if (isPractical) {
-      // Exibir imagem para questões práticas
+      // Exibir imagem para questões práticas com botão "Ampliar"
+      const imageContainer = document.createElement('div');
+      imageContainer.classList.add('image-container');
+
       const image = document.createElement('img');
       image.src = `laminas/${question.imagem}`;
       image.alt = `Lâmina da Questão ${question.numero}`;
       image.classList.add('practical-image');
-      image.onclick = () => toggleOptions(index, listId);
-      questionElement.appendChild(image);
+      
+      const zoomButton = document.createElement('button');
+      zoomButton.classList.add('zoom-button');
+      zoomButton.innerText = 'Ampliar';
+      zoomButton.onclick = () => openModal(image.src);
+
+      imageContainer.appendChild(image);
+      imageContainer.appendChild(zoomButton);
+      questionElement.appendChild(imageContainer);
     } else {
       // Exibir título para questões teóricas
       const title = document.createElement('h3');
@@ -109,6 +119,20 @@ function displayQuestions(questions, isPractical, listId) {
     questionElement.appendChild(explanationElement);
     questionsList.appendChild(questionElement);
   });
+}
+
+// Função para abrir o modal com a imagem ampliada
+function openModal(imageSrc) {
+  const modal = document.getElementById("image-modal");
+  const modalImage = document.getElementById("modal-image");
+  modal.style.display = "block";
+  modalImage.src = imageSrc;
+}
+
+// Função para fechar o modal
+function closeModal() {
+  const modal = document.getElementById("image-modal");
+  modal.style.display = "none";
 }
 
 // Função para alternar a exibição das alternativas e ocultar a explicação ao retraí-las
