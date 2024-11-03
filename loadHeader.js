@@ -16,7 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!placeholder) throw new Error("Elemento #header-placeholder não encontrado no DOM.");
       placeholder.innerHTML = data;
       console.log("Header carregado com sucesso.");
-      
+
+      // Ajusta o padding-top do main dinamicamente
+      adjustMainPadding();
+
       // Após carregar o header, ajusta os links de navegação e adiciona funcionalidade ao menu mobile
       adjustNavLinks(baseURL);
       setupMobileMenu();
@@ -24,13 +27,26 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error("Erro ao carregar o header:", error));
 });
 
+// Função para ajustar o padding-top de main com base na altura do header
+function adjustMainPadding() {
+  const headerHeight = document.querySelector(".main-nav").offsetHeight;
+  const main = document.querySelector("main");
+
+  // Acrescenta 20 pixels extras ao padding-top
+  const extraPadding = 20; // Ajuste este valor conforme necessário
+  main.style.paddingTop = `${headerHeight + extraPadding}px`;
+}
+
+
 // Função para ajustar os links de navegação de acordo com o ambiente
 function adjustNavLinks(baseURL) {
   const navLinks = document.querySelectorAll(".main-nav a");
   navLinks.forEach(link => {
     const href = link.getAttribute("href");
     if (href && !href.startsWith("http") && !href.startsWith("#")) {
-      link.setAttribute("href", `${baseURL}/${href}`);
+      const newHref = `${baseURL}/${href}`;
+      link.setAttribute("href", newHref);
+      console.log(`Ajustando link: ${href} para ${newHref}`);
     }
   });
 }
@@ -41,12 +57,13 @@ function setupMobileMenu() {
   const menuItems = document.getElementById("menu-items");
 
   if (menuIcon && menuItems) {
+    console.log("Configuração do menu mobile iniciada.");
     menuIcon.addEventListener("click", () => {
       const isMenuOpen = menuItems.style.display === "flex";
       menuItems.style.display = isMenuOpen ? "none" : "flex";
       menuIcon.classList.toggle("active", !isMenuOpen); // Alterna o estado ativo do ícone
     });
   } else {
-    console.warn("Elementos de menu mobile não encontrados.");
+    console.warn("Elementos de menu mobile não encontrados. Verifique se '#menu-icon' e '#menu-items' existem.");
   }
 }
