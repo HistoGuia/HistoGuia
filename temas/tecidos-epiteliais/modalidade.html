@@ -61,10 +61,13 @@
   <script>
     // Função para redirecionar para a página de flashcards com o tipo especificado
     function redirectToFlashcards(type) {
-      window.location.href = `flashcards.html?type=${type}`;
+      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const path = isLocalhost 
+        ? "/temas/tecidos-epiteliais/flashcards.html"
+        : "/HistoGuia/temas/tecidos-epiteliais/flashcards.html";
+      const fullURL = `${window.location.origin}${path}?type=${type}`;
+      window.location.href = fullURL;
     }
   </script>
 </body>
 </html>
-
-
