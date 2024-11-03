@@ -176,3 +176,107 @@ function checkAnswer(questionIndex, selectedOptionIndex, correctAnswerIndex, exp
   explanationElement.style.display = 'block';
   explanationElement.innerText = explanationText;
 }
+
+
+// Função de carregamento de flashcards na página flashcards.html
+document.addEventListener("DOMContentLoaded", function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const type = urlParams.get('type');
+  const titleElement = document.getElementById('flashcard-title');
+
+  // Teste para verificar o tipo de flashcard carregado
+  console.log("Tipo de flashcard selecionado:", type);
+  if (!titleElement) {
+    console.error("Elemento de título de flashcard não encontrado.");
+    return;
+  }
+
+  titleElement.textContent = type === 'teorico' ? "Flash Cards Teóricos" : "Flash Cards Práticos";
+
+  // Determina o JSON correto para carregar
+  const jsonFile = type === 'teorico' ? 'questoes.json' : 'questoes-praticas.json';
+  console.log("Carregando JSON:", jsonFile);
+  loadFlashcards(jsonFile, type === 'pratico');
+});
+
+async function loadFlashcards(jsonFile, isPractical) {
+  try {
+    const response = await fetch(jsonFile);
+    if (!response.ok) throw new Error(`Erro ao carregar o JSON: ${response.status}`);
+    const questions = await response.json();
+    console.log("Dados carregados do JSON:", questions); // Confirma o conteúdo carregado
+    displayFlashcards(questions, isPractical);
+  } catch (error) {
+    console.error("Erro ao carregar os flashcards:", error);
+  }
+}
+
+function displayFlashcards(questions, isPractical) {
+  const flashcardsList = document.getElementById('flashcards-list');
+  if (!flashcardsList) {
+    console.error("Elemento 'flashcards-list' não encontrado no DOM.");
+    return;
+  }
+
+  flashcardsList.innerHTML = ''; // Limpa qualquer conteúdo existente
+  console.log("Exibindo flashcards...");
+
+  questions.forEach((question, index) => {
+    console.log(`Processando questão ${index + 1}:`, question);
+
+    // Cria o contêiner principal do card 3D
+    const cardElement = document.createElement('div');
+    cardElement.classList.add('three-d-card');
+
+    // Wrapper para o efeito de rotação 3D
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('card-wrapper');
+
+    // Frente do card (Enunciado ou Imagem)
+    const front = document.createElement('div');
+    front.classList.add('card-face', 'front');
+    const frontContent = document.createElement('div');
+    frontContent.classList.add('card-content');
+
+    if (isPractical) {
+      // Exibe a imagem para flashcards práticos
+      const img = document.createElement('img');
+      img.src = `laminas/${question.imagem}`;
+      img.alt = `Imagem da Questão ${question.numero}`;
+      img.classList.add('flashcard-image');
+      frontContent.appendChild(img);
+      console.log("Imagem carregada para flashcard prático:", img.src);
+    } else {
+      // Exibe o enunciado para flashcards teóricos
+      const enunciado = document.createElement('p');
+      enunciado.classList.add('card-title');
+      enunciado.textContent = question.enunciado;
+      frontContent.appendChild(enunciado);
+      console.log("Texto do enunciado carregado para flashcard teórico:", question.enunciado);
+    }
+    front.appendChild(frontContent);
+
+    // Verso do card (Resposta)
+    const back = document.createElement('div');
+    back.classList.add('card-face', 'back');
+    const backContent = document.createElement('div');
+    backContent.classList.add('card-content');
+    
+    if (question.alternativas && question.alternativas[question.respostaCorreta]) {
+      const respostaCorreta = document.createElement('p');
+      respostaCorreta.classList.add('card-description');
+      respostaCorreta.textContent = `Resposta Correta: ${question.alternativas[question.respostaCorreta].texto}`;
+      backContent.appendChild(respostaCorreta);
+      console.log("Resposta correta carregada:", question.alternativas[question.respostaCorreta].texto);
+    } else {
+      console.warn("Resposta correta não encontrada para a questão:", question.numero);
+    }
+    back.appendChild(backContent);
+
+    // Montagem do card com as faces frontal e traseira
+    wrapper.appendChild(front);
+    wrapper.appendChild(back);
+    cardElement.appendChild(wrapper);
+    flashcardsList.appendChild(cardElement);
+  });
+}
