@@ -32,13 +32,13 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 1px solid #c6a1fb;
+  border-bottom: 2px solid #c6a1fb;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px #D0CDD5;
 }
 
 /* Ajuste inicial do main para mobile */
