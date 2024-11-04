@@ -1,9 +1,73 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <title>tecidos-conjuntivos - Sele��o de Modalidade</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecido Conjuntivo - Seleção de Modalidade</title>
+  <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
-    <h1>Selecione a modalidade de estudo para tecidos-conjuntivos</h1>
-    <p>Escolha entre Te�rico, Pr�tico e Flashcard.</p>
+
+  <!-- Placeholder para o Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Conteúdo Principal -->
+  <main class="modalidade-container-custom">
+    <!-- Card para Questões Teóricas -->
+    <div class="card-modalidade-custom" onclick="location.href='questoes.html'">
+      <h3 class="card-title-custom">Questões Teóricas</h3>
+      <p class="card-content-custom">Pratique seus conhecimentos teóricos com questões objetivas sobre o tecido conjuntivo.</p>
+      <div class="card-arrow-custom">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+          <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Card para Questões Práticas -->
+    <div class="card-modalidade-custom" onclick="location.href='questoes-praticas.html'">
+      <h3 class="card-title-custom">Questões Práticas</h3>
+      <p class="card-content-custom">Pratique seu conhecimento identificando características do tecido conjuntivo em lâminas histológicas.</p>
+      <div class="card-arrow-custom">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+          <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Novo Card para Flash Cards -->
+    <div class="card-modalidade-custom">
+      <h3 class="card-title-custom">Flash Cards</h3>
+      <div class="flashcards-container-custom">
+        <div class="flashcard-custom flashcard-teorico-custom" onclick="redirectToFlashcards('teorico')">
+          <p class="flashcard-tip-custom">Flash Cards Teóricos</p>
+          <p class="flashcard-description-custom">Revisão rápida de conceitos teóricos sobre o tecido conjuntivo.</p>
+        </div>
+        <div class="flashcard-custom flashcard-pratico-custom" onclick="redirectToFlashcards('pratico')">
+          <p class="flashcard-tip-custom">Flash Cards Práticos</p>
+          <p class="flashcard-description-custom">Prática com imagens e diagnósticos do tecido conjuntivo.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2024 HistoGuia. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script para carregar o header e redirecionar para flashcards -->
+  <script src="../../loadHeader.js"></script>
+  <script>
+    // Função para redirecionar para a página de flashcards com o tipo especificado
+    function redirectToFlashcards(type) {
+      const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const path = isLocalhost 
+        ? "/temas/tecidos-conjuntivos/flashcards.html"
+        : "/HistoGuia/temas/tecidos-conjuntivos/flashcards.html";
+      const fullURL = `${window.location.origin}${path}?type=${type}`;
+      window.location.href = fullURL;
+    }
+  </script>
 </body>
 </html>

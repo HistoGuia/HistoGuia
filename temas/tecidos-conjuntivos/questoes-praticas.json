@@ -1,0 +1,35 @@
+[
+    {
+        "numero": 1,
+        "imagem": "Histology-Guide-016.jpg",
+        "alternativas": [
+            {"texto": "Tecido Conjuntivo Frouxo", "explicacao": "Correto! O tecido conjuntivo frouxo possui uma matriz com fibras colágenas desorganizadas e várias células espalhadas."},
+            {"texto": "Tecido Conjuntivo Denso Modelado", "explicacao": "Errado. O tecido conjuntivo denso modelado possui fibras organizadas em paralelo, não desorganizadas."},
+            {"texto": "Cartilagem Hialina", "explicacao": "Errado. A cartilagem hialina tem uma matriz mais homogênea e não possui fibras colágenas visíveis."},
+            {"texto": "Tecido Adiposo", "explicacao": "Errado. O tecido adiposo é caracterizado por células adiposas grandes e esféricas, sem tantas fibras."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 2,
+        "imagem": "Histology-Guide-017.jpg",
+        "alternativas": [
+            {"texto": "Cartilagem Elástica", "explicacao": "Correto! A cartilagem elástica possui uma abundância de fibras elásticas, conferindo flexibilidade."},
+            {"texto": "Cartilagem Hialina", "explicacao": "Errado. A cartilagem hialina tem uma matriz lisa e homogênea, sem fibras elásticas visíveis."},
+            {"texto": "Tecido Ósseo Compacto", "explicacao": "Errado. O tecido ósseo compacto é rígido e contém osteócitos em lacunas, diferentemente da cartilagem elástica."},
+            {"texto": "Tecido Conjuntivo Denso Não Modelado", "explicacao": "Errado. O tecido conjuntivo denso não modelado possui fibras colágenas densas, não elásticas."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 3,
+        "imagem": "Histology-Guide-018.jpg",
+        "alternativas": [
+            {"texto": "Tecido Adiposo", "explicacao": "Correto! O tecido adiposo é caracterizado por células grandes e esféricas que armazenam gordura."},
+            {"texto": "Tecido Conjuntivo Frouxo", "explicacao": "Errado. O tecido conjuntivo frouxo possui uma matriz com fibras colágenas e várias células, mas não células de gordura dominantes."},
+            {"texto": "Tecido Conjuntivo Denso Modelado", "explicacao": "Errado. O tecido conjuntivo denso modelado possui fibras colágenas organizadas em paralelo e não contém células adiposas."},
+            {"texto": "Cartilagem Fibrosa", "explicacao": "Errado. A cartilagem fibrosa é caracterizada pela presença de fibras colágenas densas, mas não possui células de gordura."}
+        ],
+        "respostaCorreta": 0
+    }
+]

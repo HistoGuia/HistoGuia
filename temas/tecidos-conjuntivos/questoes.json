@@ -1,0 +1,122 @@
+[
+    {
+        "numero": 1,
+        "enunciado": "Qual é a principal função do tecido conjuntivo propriamente dito?",
+        "alternativas": [
+            {"texto": "Sustentação e conexão entre tecidos", "explicacao": "Correto! O tecido conjuntivo tem a função de sustentação e conexão entre outros tecidos do corpo."},
+            {"texto": "Revestimento de superfícies externas", "explicacao": "Errado. Essa é uma função do tecido epitelial, não do conjuntivo."},
+            {"texto": "Produção de impulsos nervosos", "explicacao": "Errado. Essa função é característica do tecido nervoso."},
+            {"texto": "Contração para movimentação", "explicacao": "Errado. Essa é uma função do tecido muscular."},
+            {"texto": "Absorção de nutrientes", "explicacao": "Errado. Essa função é mais comum no epitélio intestinal."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 2,
+        "enunciado": "Qual das seguintes células é típica do tecido conjuntivo frouxo?",
+        "alternativas": [
+            {"texto": "Fibroblasto", "explicacao": "Correto! Os fibroblastos são responsáveis pela síntese de fibras e matriz extracelular no tecido conjuntivo frouxo."},
+            {"texto": "Célula caliciforme", "explicacao": "Errado. As células caliciformes são encontradas em tecidos epiteliais, onde secretam muco."},
+            {"texto": "Célula de Schwann", "explicacao": "Errado. As células de Schwann estão associadas ao tecido nervoso, formando a bainha de mielina."},
+            {"texto": "Hepatócito", "explicacao": "Errado. Os hepatócitos são células do fígado, não do tecido conjuntivo."},
+            {"texto": "Cardiócito", "explicacao": "Errado. Os cardiócitos são células do tecido muscular cardíaco."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 3,
+        "enunciado": "Qual dos tipos de tecido conjuntivo possui alta concentração de fibras elásticas, conferindo elasticidade a estruturas como as artérias?",
+        "alternativas": [
+            {"texto": "Tecido conjuntivo elástico", "explicacao": "Correto! Esse tecido possui fibras elásticas abundantes, proporcionando elasticidade a órgãos como as artérias."},
+            {"texto": "Tecido conjuntivo denso modelado", "explicacao": "Errado. O tecido conjuntivo denso modelado possui principalmente fibras colágenas organizadas, como em tendões."},
+            {"texto": "Tecido adiposo", "explicacao": "Errado. O tecido adiposo é rico em células de gordura, mas não em fibras elásticas."},
+            {"texto": "Cartilagem hialina", "explicacao": "Errado. A cartilagem hialina possui colágeno tipo II e não é rica em fibras elásticas."},
+            {"texto": "Cartilagem fibrosa", "explicacao": "Errado. A cartilagem fibrosa é composta principalmente por colágeno, conferindo resistência, mas não elasticidade."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 4,
+        "enunciado": "Qual das seguintes opções caracteriza o tecido conjuntivo denso modelado?",
+        "alternativas": [
+            {"texto": "Fibras colágenas organizadas paralelamente", "explicacao": "Correto! Esse tecido possui fibras colágenas organizadas paralelamente, o que proporciona resistência em uma direção."},
+            {"texto": "Alta concentração de fibras elásticas", "explicacao": "Errado. Esse é o tecido conjuntivo elástico."},
+            {"texto": "Predominância de células adiposas", "explicacao": "Errado. A predominância de adipócitos caracteriza o tecido adiposo."},
+            {"texto": "Estrutura frouxa com muitas células e fibras desorganizadas", "explicacao": "Errado. Essa é uma característica do tecido conjuntivo frouxo."},
+            {"texto": "Grande quantidade de matriz amorfa", "explicacao": "Errado. O tecido conjuntivo denso modelado possui matriz reduzida em comparação com o tecido conjuntivo frouxo."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 5,
+        "enunciado": "Qual das opções a seguir é uma função do tecido adiposo?",
+        "alternativas": [
+            {"texto": "Armazenamento de energia", "explicacao": "Correto! O tecido adiposo armazena energia na forma de gordura."},
+            {"texto": "Condução de impulsos nervosos", "explicacao": "Errado. Essa função é característica do tecido nervoso."},
+            {"texto": "Contração para movimentação", "explicacao": "Errado. Essa é uma função do tecido muscular."},
+            {"texto": "Proteção contra abrasão", "explicacao": "Errado. Essa é uma função do epitélio estratificado queratinizado."},
+            {"texto": "Síntese de fibras colágenas", "explicacao": "Errado. A síntese de fibras colágenas é realizada pelos fibroblastos no tecido conjuntivo."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 6,
+        "enunciado": "Qual a principal característica do tecido conjuntivo frouxo?",
+        "alternativas": [
+            {"texto": "Possui fibras colágenas desorganizadas e muitas células", "explicacao": "Correto! O tecido conjuntivo frouxo possui fibras colágenas desorganizadas, além de células e substância fundamental abundante."},
+            {"texto": "É altamente vascularizado e organizado", "explicacao": "Errado. Embora seja vascularizado, o tecido conjuntivo frouxo não é organizado."},
+            {"texto": "Formado exclusivamente por fibras elásticas", "explicacao": "Errado. O tecido conjuntivo frouxo contém fibras colágenas, elásticas e reticulares, mas não exclusivamente elásticas."},
+            {"texto": "Tem função principal de armazenamento de gordura", "explicacao": "Errado. O armazenamento de gordura é a função do tecido adiposo."},
+            {"texto": "Tem fibras densamente organizadas", "explicacao": "Errado. Fibras densamente organizadas são características do tecido conjuntivo denso."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 7,
+        "enunciado": "Qual célula é responsável pela produção de anticorpos no tecido conjuntivo?",
+        "alternativas": [
+            {"texto": "Plasmócito", "explicacao": "Correto! Os plasmócitos derivam dos linfócitos B e produzem anticorpos."},
+            {"texto": "Fibroblasto", "explicacao": "Errado. Os fibroblastos são responsáveis pela síntese de fibras e matriz extracelular, não de anticorpos."},
+            {"texto": "Macrófago", "explicacao": "Errado. Os macrófagos realizam fagocitose, mas não produzem anticorpos."},
+            {"texto": "Adipócito", "explicacao": "Errado. Os adipócitos armazenam gordura e não produzem anticorpos."},
+            {"texto": "Mastócito", "explicacao": "Errado. Os mastócitos estão envolvidos na resposta alérgica e inflamatória, mas não produzem anticorpos."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 8,
+        "enunciado": "Qual é a função principal dos mastócitos no tecido conjuntivo?",
+        "alternativas": [
+            {"texto": "Liberação de histamina e heparina em reações alérgicas", "explicacao": "Correto! Os mastócitos liberam histamina e heparina, desempenhando papel importante na resposta alérgica e inflamatória."},
+            {"texto": "Armazenamento de gordura", "explicacao": "Errado. O armazenamento de gordura é função dos adipócitos."},
+            {"texto": "Produção de colágeno", "explicacao": "Errado. A produção de colágeno é responsabilidade dos fibroblastos."},
+            {"texto": "Fagocitose de patógenos", "explicacao": "Errado. A fagocitose é uma função dos macrófagos."},
+            {"texto": "Produção de anticorpos", "explicacao": "Errado. A produção de anticorpos é função dos plasmócitos."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 9,
+        "enunciado": "Qual tipo de colágeno é predominante na cartilagem hialina?",
+        "alternativas": [
+            {"texto": "Colágeno tipo II", "explicacao": "Correto! A cartilagem hialina possui principalmente colágeno tipo II, proporcionando resistência e flexibilidade."},
+            {"texto": "Colágeno tipo I", "explicacao": "Errado. O colágeno tipo I é encontrado em tecidos como tendões e pele."},
+            {"texto": "Colágeno tipo III", "explicacao": "Errado. O colágeno tipo III é mais comum em fibras reticulares do tecido conjuntivo frouxo."},
+            {"texto": "Colágeno tipo IV", "explicacao": "Errado. O colágeno tipo IV está presente na membrana basal."},
+            {"texto": "Colágeno tipo V", "explicacao": "Errado. O colágeno tipo V está associado ao tipo I em algumas fibras."}
+        ],
+        "respostaCorreta": 0
+    },
+    {
+        "numero": 10,
+        "enunciado": "Onde o tecido conjuntivo reticular é predominantemente encontrado?",
+        "alternativas": [
+            {"texto": "Órgãos linfóides como o baço e linfonodos", "explicacao": "Correto! O tecido conjuntivo reticular forma uma rede de suporte em órgãos linfóides, como o baço e linfonodos."},
+            {"texto": "Camada externa da pele", "explicacao": "Errado. A camada externa da pele é composta por tecido epitelial."},
+            {"texto": "Cartilagem hialina", "explicacao": "Errado. A cartilagem hialina possui colágeno tipo II, não tecido reticular."},
+            {"texto": "Músculo esquelético", "explicacao": "Errado. O músculo esquelético é composto de fibras musculares, não de tecido reticular."},
+            {"texto": "Cérebro", "explicacao": "Errado. O cérebro é formado por tecido nervoso."}
+        ],
+        "respostaCorreta": 0
+    }
+]
