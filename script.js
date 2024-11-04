@@ -2,7 +2,6 @@
 
 // Função de inicialização para redirecionamento inicial e configuração de navegação
 function init() {
-  console.log("Iniciando o script...");
   const startButton = document.querySelector('.start-btn');
   if (startButton) {
     startButton.addEventListener('click', redirectToThemesPage);
@@ -37,10 +36,21 @@ function setupThemeNavigation() {
   themeButtons.forEach((button, index) => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
-      const temaPath = temaPaths[index] || "unavailable";
-      const path = temaPath === "unavailable" ? "unavailable.html" : `temas/${temaPath}/modalidade.html`;
-      console.log(`Redirecionando para: ${path}`);
-      window.location.href = path;
+      const temaPath = temaPaths[index];
+      const modalidadePath = `temas/${temaPath}/modalidade.html`;
+
+      // Verifica se o arquivo de modalidade existe
+      fetch(modalidadePath, { method: 'HEAD' })
+        .then((response) => {
+          if (response.ok) {
+            window.location.href = modalidadePath;
+          } else {
+            window.location.href = "unavailable.html";
+          }
+        })
+        .catch(() => {
+          window.location.href = "unavailable.html";
+        });
     });
   });
 }
@@ -49,7 +59,6 @@ function setupThemeNavigation() {
 function detectCurrentTheme() {
   const pathParts = window.location.pathname.split('/');
   const theme = pathParts[pathParts.indexOf('temas') + 1];
-  console.log(`Tema atual detectado: ${theme}`);
   return theme;
 }
 
@@ -72,13 +81,11 @@ function loadContentBasedOnPage() {
 
 // Função para carregar e exibir questões a partir de um JSON
 async function loadQuestions(jsonFile, isPractical, listId) {
-  console.log(`Carregando questões de ${jsonFile}...`);
   try {
     const response = await fetch(jsonFile);
     if (!response.ok) throw new Error(`Erro ao carregar o arquivo JSON: ${response.status}`);
     
     const questions = await response.json();
-    console.log("Questões carregadas com sucesso:", questions);
     displayQuestions(questions, isPractical, listId);
   } catch (error) {
     console.error("Erro ao carregar as questões:", error);
@@ -152,14 +159,12 @@ function openModal(imageSrc) {
   const modalImage = document.getElementById("modal-image");
   modal.style.display = "block";
   modalImage.src = imageSrc;
-  console.log("Imagem ampliada exibida:", imageSrc);
 }
 
 // Função para fechar o modal
 function closeModal() {
   const modal = document.getElementById("image-modal");
   modal.style.display = "none";
-  console.log("Modal fechado");
 }
 
 // Alterna a exibição das alternativas e oculta a explicação ao retraí-las
@@ -178,7 +183,6 @@ function toggleOptions(questionIndex, listId) {
   if (isVisible) {
     explanation.style.display = 'none';
   }
-  console.log(`Alternando opções de exibição para a questão ${questionIndex}`);
 }
 
 // Verifica a resposta e exibe o feedback
@@ -195,17 +199,14 @@ function checkAnswer(questionIndex, selectedOptionIndex, correctAnswerIndex, exp
   const explanationElement = document.getElementById(`explanation-${questionIndex}`);
   explanationElement.style.display = 'block';
   explanationElement.innerText = explanationText;
-  console.log(`Resposta verificada para a questão ${questionIndex}: ${selectedOptionIndex === correctAnswerIndex ? "Correta" : "Incorreta"}`);
 }
 
 // Função de carregamento de flashcards na página flashcards.html
 async function loadFlashcards(jsonFile, isPractical) {
-  console.log(`Carregando flashcards de ${jsonFile}...`);
   try {
     const response = await fetch(jsonFile);
     if (!response.ok) throw new Error(`Erro ao carregar o JSON: ${response.status}`);
     const questions = await response.json();
-    console.log("Flashcards carregados com sucesso:", questions);
     displayFlashcards(questions, isPractical);
   } catch (error) {
     console.error("Erro ao carregar os flashcards:", error);
@@ -221,11 +222,8 @@ function displayFlashcards(questions, isPractical) {
   }
 
   flashcardsList.innerHTML = '';
-  console.log("Exibindo flashcards...");
 
   questions.forEach((question, index) => {
-    console.log(`Processando questão ${index + 1}:`, question);
-
     const cardElement = document.createElement('div');
     cardElement.classList.add('three-d-card');
 
@@ -243,13 +241,11 @@ function displayFlashcards(questions, isPractical) {
       img.alt = `Imagem da Questão ${question.numero}`;
       img.classList.add('flashcard-image');
       frontContent.appendChild(img);
-      console.log("Imagem carregada para flashcard prático:", img.src);
     } else {
       const enunciado = document.createElement('p');
       enunciado.classList.add('card-title');
       enunciado.textContent = question.enunciado;
       frontContent.appendChild(enunciado);
-      console.log("Texto do enunciado carregado para flashcard teórico:", question.enunciado);
     }
     front.appendChild(frontContent);
 
@@ -263,7 +259,6 @@ function displayFlashcards(questions, isPractical) {
       respostaCorreta.classList.add('card-description');
       respostaCorreta.textContent = `Resposta Correta: ${question.alternativas[question.respostaCorreta].texto}`;
       backContent.appendChild(respostaCorreta);
-      console.log("Resposta correta carregada:", question.alternativas[question.respostaCorreta].texto);
     } else {
       console.warn("Resposta correta não encontrada para a questão:", question.numero);
     }
