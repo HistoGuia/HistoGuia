@@ -16,15 +16,6 @@ body {
   color: #333;
 }
 
-/* === Estilo do Header === */
-header {
-  background-color: #f4f4f9;
-  padding: 1rem;
-  border-bottom: 2px solid #a17ae0;
-  position: relative;
-  z-index: 1000;
-}
-
 /* Estilos para o header fixo */
 .main-nav {
   background-color: #f4f4f9;
@@ -39,36 +30,22 @@ header {
   width: 100%;
   z-index: 1000;
   box-shadow: 0px 4px 8px #D0CDD5;
-  height: 60px; /* Define uma altura fixa para o header */
+  height: 60px;
 }
 
-main {
-  padding-top: 60px; /* Alinha o padding-top com a altura do header */
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .main-nav {
-    height: 10px; /* Altura menor em telas pequenas */
-    padding: 0.8rem 1.5rem;
-  }
-
-  main {
-    padding-top: 10px; /* Alinha com a altura do header em telas menores */
-  }
-}
-
-
-
-.main-nav h1 {
+/* Ajuste para alinhar o nome à direita */
+.nav-title {
   font-size: 1.5rem;
   color: #333;
   margin: 0;
+  order: 2; /* Coloca o título à direita */
+}
+
+.menu-items-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  order: 1; /* Coloca o menu à esquerda */
 }
 
 .main-nav ul {
@@ -114,15 +91,15 @@ main {
     flex-direction: column;
     gap: 1rem;
     background-color: #f4f4f9;
-    position: fixed; /* Mantém o menu fixo no topo da página */
-    top: 60px; /* Ajuste para posicionar abaixo do header */
+    position: fixed;
+    top: 60px;
     right: 10px;
     width: 150px;
     padding: 1rem;
     border: 1px solid #a17ae0;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1001; /* Mais alto que os outros elementos */
+    z-index: 1001;
   }
 
   /* Exibir menu em bloco quando ativo */
