@@ -211,25 +211,6 @@ main {
 }
 
 /* Botão */
-.homepage-start-btn {
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #333;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 2rem;
-  transition: background-color 0.3s;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.homepage-start-btn:hover {
-  background-color: #555;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
   .homepage-content-container {
@@ -303,19 +284,22 @@ main {
 
 /* === Estilo do Botão Iniciar === */
 .start-btn {
-  padding: 0.8rem 1.2rem;
+  padding: 1rem 1.5rem;
   font-size: 1rem;
   color: #fff;
-  background-color: #333;
+  background-color: #7839CD;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 2rem;
   transition: background-color 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .start-btn:hover {
-  background-color: #555;
-}
+  background-color: #A67EDC;}
 
 /* === Responsividade Geral === */
 @media (max-width: 768px) {
