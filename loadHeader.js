@@ -23,20 +23,26 @@ document.addEventListener("DOMContentLoaded", function () {
       // Após carregar o header, ajusta os links de navegação e adiciona funcionalidade ao menu mobile
       adjustNavLinks(baseURL);
       setupMobileMenu();
+
+      // Adiciona o listener para ajustar o padding ao redimensionar a janela
+      window.addEventListener("resize", adjustMainPadding);
     })
     .catch(error => console.error("Erro ao carregar o header:", error));
 });
 
 // Função para ajustar o padding-top de main com base na altura do header
 function adjustMainPadding() {
-  const headerHeight = document.querySelector(".main-nav").offsetHeight;
+  const header = document.querySelector(".main-nav");
   const main = document.querySelector("main");
 
-  // Acrescenta 20 pixels extras ao padding-top
-  const extraPadding = 20; // Ajuste este valor conforme necessário
-  main.style.paddingTop = `${headerHeight + extraPadding}px`;
+  if (header && main) {
+    const headerHeight = header.offsetHeight;
+    main.style.paddingTop = `${headerHeight}px`;
+    console.log(`Padding-top ajustado para ${headerHeight}px, com base na altura do header.`);
+  } else {
+    console.warn("Elemento .main-nav ou <main> não encontrado. Verifique a estrutura HTML.");
+  }
 }
-
 
 // Função para ajustar os links de navegação de acordo com o ambiente
 function adjustNavLinks(baseURL) {

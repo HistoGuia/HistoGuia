@@ -25,7 +25,7 @@ header {
   z-index: 1000;
 }
 
-/* === Estilo Fixo do Main Nav === */
+/* Estilos para o header fixo */
 .main-nav {
   background-color: #f4f4f9;
   display: flex;
@@ -39,19 +39,30 @@ header {
   width: 100%;
   z-index: 1000;
   box-shadow: 0px 4px 8px #D0CDD5;
+  height: 60px; /* Define uma altura fixa para o header */
 }
 
-/* Ajuste inicial do main para mobile */
 main {
-  padding-top: 80px; /* Padding inicial para compensar a altura do main-nav */
+  padding-top: 60px; /* Alinha o padding-top com a altura do header */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
-/* Estilos para dispositivos móveis */
+/* Responsividade */
 @media (max-width: 768px) {
   .main-nav {
+    height: 10px; /* Altura menor em telas pequenas */
     padding: 0.8rem 1.5rem;
   }
+
+  main {
+    padding-top: 10px; /* Alinha com a altura do header em telas menores */
+  }
 }
+
 
 
 .main-nav h1 {
@@ -149,7 +160,7 @@ main {
 }
 
 .image-section img {
-  max-width: 200px;
+  max-width: 600px;
   border-radius: 8px;
 }
 

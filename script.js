@@ -270,6 +270,17 @@ function displayFlashcards(questions, isPractical) {
     flashcardsList.appendChild(cardElement);
   });
 }
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.main-nav');
+  const mainContent = document.querySelector('main');
+
+  if (header && mainContent) {
+    const headerHeight = header.offsetHeight;
+    mainContent.style.paddingTop = `${headerHeight}px`;
+  }
+});
 
 // Inicia o script ao carregar a página
 document.addEventListener('DOMContentLoaded', init);
+
+
