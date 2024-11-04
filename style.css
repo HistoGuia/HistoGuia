@@ -131,6 +131,127 @@ main {
   }
 }
 
+/* Ajustes no Layout Principal */
+.homepage-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto; /* Centraliza horizontalmente */
+  min-height: 100vh; /* Garante que a altura ocupe toda a tela */
+  flex-wrap: wrap; /* Permite que os elementos quebrem linha em telas menores */
+}
+
+/* Ajustes na Seção da Imagem */
+.homepage-image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.homepage-image-section img {
+  max-width: 100%;
+  width: 700px; /* Aumenta o tamanho da logo */
+  border-radius: 8px;
+}
+
+/* Ajustes na Seção de Texto */
+.homepage-text-section {
+  flex: 1.5;
+  display: flex; /* Torna a seção de texto um contêiner flex */
+  flex-direction: column; /* Organiza o conteúdo em coluna */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente dentro da div */
+  text-align: center;
+  max-width: 500px;
+  padding-right: 1rem;
+}
+
+/* Estilo do Título */
+.homepage-text-section h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.homepage-highlight {
+  color: #7839cd;
+}
+
+/* Texto Descritivo */
+.homepage-text-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Estatísticas */
+.homepage-stats {
+  display: flex;
+  gap: 10rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.homepage-stat-item {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.homepage-stat-item strong {
+  font-size: 1.5rem;
+  display: block;
+  color: #7839cd;
+}
+
+/* Botão */
+.homepage-start-btn {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homepage-start-btn:hover {
+  background-color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .homepage-content-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .homepage-image-section img {
+    width: 300px;
+  }
+
+  .homepage-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .homepage-text-section {
+    text-align: center;
+  }
+}
+
 
 /* === Estilo do Rodapé === */
 footer {
@@ -681,7 +802,7 @@ main {
   margin: auto;
   display: block;
   width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
 }
 
 .close {
