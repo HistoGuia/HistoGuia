@@ -23,14 +23,19 @@ function setupThemeNavigation() {
   const temaPaths = [
     "tecidos-epiteliais",
     "tecidos-conjuntivos",
-    "tecidos-musculares",
-    "tecidos-nervosos",
-    "tecidos-adiposos",
-    "cartilagens",
-    "ossos",
+    "tecido-cartilaginoso",
+    "tecido-oseo",
+    "tecido-adiposo",
     "tecido-sanguineo",
-    "tecido-hematopoietico",
-    "linfatico"
+    "tecido-muscular",
+    "tecido-nervoso",
+    "sistema-cardiovascular",
+    "sistema-linfatico",
+    "sistema-digestorio-1",
+    "sistema-digestorio-2",
+    "sistema-digestorio-3",
+    "sistema-respiratorio",
+    "sistema-urinario",
   ];
 
   themeButtons.forEach((button, index) => {
