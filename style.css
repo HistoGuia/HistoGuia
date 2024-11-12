@@ -310,13 +310,39 @@ main {
   }
 }
 
+/* Estilo para o título "Sumário de Conteúdos" */
+.themes-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px; /* Espaço entre o título e os cards */
+}
+
+.themes-title h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+
+
+/* Responsividade para o título */
+@media (max-width: 768px) {
+  .themes-title h1 {
+    font-size: 2rem;
+  }
+}
+
+
 /* === Estilos dos Cards na Página de Temas === */
+/* Container dos cards */
+/* Ajustes no Layout dos Cards */
 .themes-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza os cards na tela */
   gap: 1.5rem;
   padding: 2rem;
-  justify-items: center;
 }
 
 .container {
