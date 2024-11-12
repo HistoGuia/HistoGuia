@@ -487,21 +487,40 @@ main {
 }
 
 /* === Página de Seleção de Modalidade === */
+.modalidade-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.modalidade-title h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Container principal */
 .modalidade-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
   gap: 2rem;
   padding: 2rem;
-  flex-wrap: wrap;
+}
+
+/* Ajuste para alinhar os cards em linha */
+.modalidade-cards {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebra em telas menores */
+  gap: 2rem;
+  justify-content: center;
 }
 
 .card-modalidade {
   --border-radius-modalidade: 0.75rem;
   --primary-color-modalidade: #7257fa;
   --secondary-color-modalidade: #3c3852;
-  width: 350px;
+  width: 300px;
   height: 250px;
   font-family: "Arial";
   padding: 1.5rem;
@@ -509,13 +528,21 @@ main {
   border-radius: var(--border-radius-modalidade);
   background: #f1f1f3;
   box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .modalidade-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 .card-modalidade:hover {
   transform: scale(1.05);
