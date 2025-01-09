@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuração do Simulado</title>
+  <!-- Estilo geral -->
+  <link rel="stylesheet" href="../style.css">
+  <!-- Estilo específico da página -->
+  <link rel="stylesheet" href="style-simulados.css">
+</head>
+<body>
+  <!-- Placeholder para o Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Conteúdo principal -->
+  <main class="simulado-container">
+    <h1>Configuração do Simulado</h1>
+
+    <!-- Passo 1 -->
+    <section class="simulado-step">
+      <h2>Passo 1: Escolha os Temas</h2>
+      <p>Selecione os temas que deseja incluir no simulado.</p>
+      <div id="tema-list">
+        <!-- Lista de temas gerada dinamicamente -->
+      </div>
+    </section>
+
+    <!-- Passo 2 -->
+    <section class="simulado-step">
+      <h2>Passo 2: Quantidade de Questões</h2>
+      <p>Escolha a quantidade de questões que deseja responder.</p>
+      <input type="number" id="num-questoes" min="1" max="50" placeholder="Digite a quantidade (1-50)">
+    </section>
+
+    <!-- Passo 3 -->
+    <section class="simulado-step">
+      <h2>Passo 3: Tempo por Questão</h2>
+      <p>Selecione o tempo desejado (em segundos) para responder cada questão.</p>
+      <input type="number" id="tempo-questao" min="10" max="300" placeholder="Tempo em segundos (10-300)">
+    </section>
+
+    <!-- Botão para iniciar o simulado -->
+    <button id="start-simulado" class="simulado-btn">Iniciar Simulado</button>
+  </main>
+
+  <!-- Placeholder para o Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="../loadHeader.js"></script>
+  <script src="../loadFooter.js"></script>
+  <script src="simulados.js"></script>
+</body>
+</html>

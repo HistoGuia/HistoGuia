@@ -1,0 +1,122 @@
+/* === Estilos Gerais === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* === Container Principal === */
+  .simulado-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: none; /* Remove sombra */
+    border-radius: 0; /* Remove bordas arredondadas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ocupa toda a altura */
+  }
+  
+  /* === Títulos === */
+  h1, h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  /* === Passos do Simulado === */
+  .simulado-step {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .simulado-step p {
+    margin: 0.5rem 0 1rem;
+    color: #666;
+  }
+  
+  /* === Lista de Temas === */
+  #tema-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; /* Centraliza os temas */
+  }
+  
+  .tema-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* === Input de Número === */
+  input[type="number"] {
+    width: 100%;
+    max-width: 300px; /* Limita a largura do input */
+    padding: 0.5rem;
+    margin: 0 auto 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center; /* Centraliza o texto no input */
+  }
+  
+  /* === Botão de Iniciar Simulado === */
+  .simulado-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px; /* Limita a largura do botão */
+    padding: 0.75rem;
+    background-color: #7257fa;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+  }
+  
+  .simulado-btn:hover {
+    background-color: #5a47d0;
+  }
+  
+  /* === Responsividade === */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.2rem;
+    }
+  
+    .simulado-container {
+      padding: 1.5rem;
+    }
+  
+    input[type="number"],
+    .simulado-btn {
+      max-width: 100%; /* Ajusta para ocupar toda a largura no mobile */
+    }
+  }
+  
