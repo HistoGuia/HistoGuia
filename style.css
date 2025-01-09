@@ -38,14 +38,14 @@ body {
   font-size: 1.5rem;
   color: #333;
   margin: 0;
-  order: 2; /* Coloca o título à direita */
+  order: 1; /* Coloca o título à direita */
 }
 
 .menu-items-container {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  order: 1; /* Coloca o menu à esquerda */
+  order: 2; /* Coloca o menu à esquerda */
 }
 
 .main-nav ul {
