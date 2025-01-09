@@ -487,6 +487,8 @@ main {
 }
 
 /* === Página de Seleção de Modalidade === */
+
+/* Título centralizado */
 .modalidade-title {
   width: 100%;
   text-align: center;
@@ -511,16 +513,18 @@ main {
 /* Ajuste para alinhar os cards em linha */
 .modalidade-cards {
   display: flex;
-  flex-wrap: wrap; /* Permite quebra em telas menores */
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
   gap: 2rem;
   justify-content: center;
+  width: 100%;
 }
 
+/* Estilo dos cards */
 .card-modalidade {
   --border-radius-modalidade: 0.75rem;
   --primary-color-modalidade: #7257fa;
   --secondary-color-modalidade: #3c3852;
-  width: 300px;
+  width: 350px;
   height: 250px;
   font-family: "Arial";
   padding: 1.5rem;
@@ -531,19 +535,12 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  position: relative; /* Garante que elementos absolutos fiquem ancorados no card */
+  overflow: hidden; /* Impede que elementos vazem do card */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .modalidade-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-
+/* Animação ao passar o mouse */
 .card-modalidade:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -553,43 +550,60 @@ main {
   margin-top: 1.1em;
 }
 
+/* Conteúdo do card */
 .card-modalidade .card__content-modalidade {
   color: var(--secondary-color-modalidade);
   font-size: 1rem;
 }
 
+/* Título do card */
 .card-modalidade .card__title-modalidade {
   padding: 0;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
+/* Seta no canto inferior direito */
 .card-modalidade .card__arrow-modalidade {
   position: absolute;
+  bottom: 10px; /* Posiciona dentro do card */
+  right: 10px; /* Posiciona dentro do card */
   background: #000; /* Cor preta inicial */
   padding: 0.5rem;
   border-top-left-radius: var(--border-radius-modalidade);
   border-bottom-right-radius: var(--border-radius-modalidade);
-  bottom: 0;
-  right: 0;
-  transition: 0.2s;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background 0.2s;
 }
 
+/* Animação da seta no hover */
 .card-modalidade:hover .card__arrow-modalidade {
-  background: var(--primary-color-modalidade); /* Muda para a cor roxa ao hover */
+  background: var(--primary-color-modalidade);
 }
 
 .card-modalidade svg {
-  fill: #000; /* Cor preta inicial do SVG */
+  fill: #fff; /* Cor inicial do ícone */
   transition: fill 0.2s, transform 0.2s;
 }
 
 .card-modalidade:hover svg {
-  fill: var(--primary-color-modalidade); /* Muda para roxo ao hover */
-  transform: translateX(3px); /* Efeito de movimento ao hover */
+  fill: #fff; /* Cor do ícone no hover */
+  transform: translateX(3px); /* Pequeno movimento no hover */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .modalidade-cards {
+    flex-direction: column; /* Organiza os cards em coluna */
+    align-items: center;
+  }
+
+  .card-modalidade {
+    width: 90%; /* Ajusta a largura para caber na tela menor */
+    height: auto; /* Permite altura dinâmica */
+  }
 }
 
 

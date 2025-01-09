@@ -262,7 +262,7 @@ function displayFlashcards(questions, isPractical) {
     if (question.alternativas && question.alternativas[question.respostaCorreta]) {
       const respostaCorreta = document.createElement('p');
       respostaCorreta.classList.add('card-description');
-      respostaCorreta.textContent = `Resposta Correta: ${question.alternativas[question.respostaCorreta].texto}`;
+      respostaCorreta.textContent = `${question.alternativas[question.respostaCorreta].texto}`;
       backContent.appendChild(respostaCorreta);
     } else {
       console.warn("Resposta correta não encontrada para a questão:", question.numero);
@@ -287,5 +287,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Inicia o script ao carregar a página
 document.addEventListener('DOMContentLoaded', init);
-
-
