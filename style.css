@@ -230,7 +230,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 0; /* Garante que o padding do container principal não interfira */
 }
 
 .content-container {
@@ -485,127 +485,6 @@ main {
   text-decoration: none;
   font-weight: bold;
 }
-
-/* === Página de Seleção de Modalidade === */
-
-/* Título centralizado */
-.modalidade-title {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.modalidade-title h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Container principal */
-.modalidade-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-/* Ajuste para alinhar os cards em linha */
-.modalidade-cards {
-  display: flex;
-  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
-  gap: 2rem;
-  justify-content: center;
-  width: 100%;
-}
-
-/* Estilo dos cards */
-.card-modalidade {
-  --border-radius-modalidade: 0.75rem;
-  --primary-color-modalidade: #7257fa;
-  --secondary-color-modalidade: #3c3852;
-  width: 350px;
-  height: 250px;
-  font-family: "Arial";
-  padding: 1.5rem;
-  cursor: pointer;
-  border-radius: var(--border-radius-modalidade);
-  background: #f1f1f3;
-  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 3%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative; /* Garante que elementos absolutos fiquem ancorados no card */
-  overflow: hidden; /* Impede que elementos vazem do card */
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-/* Animação ao passar o mouse */
-.card-modalidade:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-.card-modalidade > * + * {
-  margin-top: 1.1em;
-}
-
-/* Conteúdo do card */
-.card-modalidade .card__content-modalidade {
-  color: var(--secondary-color-modalidade);
-  font-size: 1rem;
-}
-
-/* Título do card */
-.card-modalidade .card__title-modalidade {
-  padding: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* Seta no canto inferior direito */
-.card-modalidade .card__arrow-modalidade {
-  position: absolute;
-  bottom: 10px; /* Posiciona dentro do card */
-  right: 10px; /* Posiciona dentro do card */
-  background: #000; /* Cor preta inicial */
-  padding: 0.5rem;
-  border-top-left-radius: var(--border-radius-modalidade);
-  border-bottom-right-radius: var(--border-radius-modalidade);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background 0.2s;
-}
-
-/* Animação da seta no hover */
-.card-modalidade:hover .card__arrow-modalidade {
-  background: var(--primary-color-modalidade);
-}
-
-.card-modalidade svg {
-  fill: #fff; /* Cor inicial do ícone */
-  transition: fill 0.2s, transform 0.2s;
-}
-
-.card-modalidade:hover svg {
-  fill: #fff; /* Cor do ícone no hover */
-  transform: translateX(3px); /* Pequeno movimento no hover */
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .modalidade-cards {
-    flex-direction: column; /* Organiza os cards em coluna */
-    align-items: center;
-  }
-
-  .card-modalidade {
-    width: 90%; /* Ajusta a largura para caber na tela menor */
-    height: auto; /* Permite altura dinâmica */
-  }
-}
-
 
 /* === Página de Quiz === */
 .quiz-container {
@@ -895,14 +774,31 @@ main {
 
 
 /* === Estilos da Página de Modalidade Personalizados === */
+/* Container principal */
 .modalidade-container-custom {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  gap: 2rem;
+  flex-direction: column; /* Permite que o título fique acima */
+  justify-content: flex-start; /* Alinha os elementos ao topo */
+  align-items: center; /* Centraliza horizontalmente */
+  min-height: 100vh; /* Ocupa toda a altura da tela */
+  gap: 20em; /* Espaçamento entre o título e os cards */
   padding: 2rem;
-  flex-wrap: wrap;
+}
+
+/* Estilo dos cards */
+.modalidade-cards {
+  display: flex;
+  justify-content: center; /* Centraliza os cards horizontalmente */
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha, caso necessário */
+  gap: 2rem; /* Espaçamento entre os cards */
+  width: 100%; /* Garante que os cards ocupem o espaço disponível */
+}
+
+/* Título centralizado */
+.modalidade-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 5em;
 }
 
 .card-modalidade-custom {
@@ -916,6 +812,7 @@ main {
   cursor: pointer;
   border-radius: var(--border-radius-modalidade-custom);
   background: #f1f1f3;
+  border: 1px solid #7257fa; /* Adiciona a borda de 1px com cor cinza claro */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.03);
   position: relative;
   display: flex;
@@ -924,6 +821,7 @@ main {
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 
 .card-modalidade-custom:hover {
   transform: scale(1.05);
@@ -995,11 +893,11 @@ main {
 }
 
 .flashcard-teorico-custom {
-  background-color: #f43f5e;
+  background-color: #7257fa;
 }
 
 .flashcard-pratico-custom {
-  background-color: #3b82f6;
+  background-color: #7257fa;
 }
 
 .flashcard-tip-custom {
@@ -1058,7 +956,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #3498db;
+  border: 2px solid #7257fa;
   border-radius: 15px;
   background-color: #fff;
   overflow: hidden;

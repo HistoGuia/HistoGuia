@@ -12,52 +12,50 @@
   <div id="header-placeholder"></div>
 
   <!-- Conteúdo Principal -->
-  <main class="modalidade-container">
-    
-    <!-- Título centralizado para a página -->
-    <div class="modalidade-title">
-      <h1>Tecido Epitelial</h1>
+  <main class="modalidade-container-custom">
+        <!-- Título centralizado para a página -->
+        <div class="modalidade-title">
+          <h1>Tecido Epitelial</h1>
+        </div>      
+
+  <div class="modalidade-cards">
+    <!-- Card para Questões Teóricas -->
+    <div class="card-modalidade-custom" onclick="location.href='questoes.html'">
+      <h3 class="card-title-custom">Questões Teóricas</h3>
+      <p class="card-content-custom">Pratique seus conhecimentos teóricos com questões objetivas sobre o tecido epitelial.</p>
+      <div class="card-arrow-custom">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+          <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+        </svg>
+      </div>
     </div>
-    
-    <!-- Container para os cards de modalidade -->
-    <div class="modalidade-cards">
-      <!-- Card para Questões Teóricas -->
-      <div class="card-modalidade" onclick="location.href='questoes.html'">
-        <h3 class="card__title-modalidade">Questões Teóricas</h3>
-        <p class="card__content-modalidade">Pratique seus conhecimentos teóricos com questões objetivas.</p>
-        <div class="card__arrow-modalidade">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-            <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-          </svg>
-        </div>
-      </div>
 
-      <!-- Card para Questões Práticas -->
-      <div class="card-modalidade" onclick="location.href='questoes-praticas.html'">
-        <h3 class="card__title-modalidade">Questões Práticas</h3>
-        <p class="card__content-modalidade">Pratique seu conhecimento fazendo o diagnóstico de lâminas.</p>
-        <div class="card__arrow-modalidade">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
-            <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
-          </svg>
-        </div>
+    <!-- Card para Questões Práticas -->
+    <div class="card-modalidade-custom" onclick="location.href='questoes-praticas.html'">
+      <h3 class="card-title-custom">Questões Práticas</h3>
+      <p class="card-content-custom">Pratique seu conhecimento identificando características do tecido epitelial em lâminas histológicas.</p>
+      <div class="card-arrow-custom">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15" width="15">
+          <path fill="#fff" d="M13.4697 17.9697C13.1768 18.2626 13.1768 18.7374 13.4697 19.0303L20.3232 13.2374C21.0066 12.554 21.0066 11.446 20.3232 10.7626L14.5303 4.96967C14.2374 4.67678 13.7626 4.67678 13.4697 4.96967C13.1768 5.26256 13.1768 5.73744 13.4697 6.03033L18.6893 11.25H4C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H18.6893L13.4697 17.9697Z"></path>
+        </svg>
       </div>
+    </div>
 
-      <!-- Card para Flash Cards -->
-      <div class="card-modalidade">
-        <h3 class="card__title-modalidade">Flash Cards</h3>
-        <div class="flashcards-container-custom">
-          <div class="flashcard-custom flashcard-teorico-custom" onclick="redirectToFlashcards('teorico')">
-            <p class="flashcard-tip-custom">Flash Cards Teóricos</p>
-            <p class="flashcard-description-custom">Revisão rápida de conceitos teóricos.</p>
-          </div>
-          <div class="flashcard-custom flashcard-pratico-custom" onclick="redirectToFlashcards('pratico')">
-            <p class="flashcard-tip-custom">Flash Cards Práticos</p>
-            <p class="flashcard-description-custom">Prática com imagens e diagnósticos.</p>
-          </div>
+    <!-- Novo Card para Flash Cards -->
+    <div class="card-modalidade-custom">
+      <h3 class="card-title-custom">Flash Cards</h3>
+      <div class="flashcards-container-custom">
+        <div class="flashcard-custom flashcard-teorico-custom" onclick="redirectToFlashcards('teorico')">
+          <p class="flashcard-tip-custom">Teóricos</p>
+          <p class="flashcard-description-custom">Revisão rápida de conceitos teóricos sobre o tecido epitelial.</p>
+        </div>
+        <div class="flashcard-custom flashcard-pratico-custom" onclick="redirectToFlashcards('pratico')">
+          <p class="flashcard-tip-custom">Práticos</p>
+          <p class="flashcard-description-custom">Prática com imagens e diagnósticos do tecido epitelial.</p>
         </div>
       </div>
     </div>
+  </div>
   </main>
 
   <!-- Script para carregar o header e redirecionar para flashcards -->
