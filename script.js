@@ -275,15 +275,33 @@ function displayFlashcards(questions, isPractical) {
     flashcardsList.appendChild(cardElement);
   });
 }
-document.addEventListener('DOMContentLoaded', function() {
+
+
+document.addEventListener('DOMContentLoaded', function () {
   const header = document.querySelector('.main-nav');
   const mainContent = document.querySelector('main');
 
+  // Ajusta o padding superior com base na altura do header
   if (header && mainContent) {
     const headerHeight = header.offsetHeight;
     mainContent.style.paddingTop = `${headerHeight}px`;
   }
+
+  // Adiciona lógica específica para a página de configuração do simulado
+  const page = document.body.getAttribute('data-page');
+
+  if (page === 'configuracao-simulado') {
+    console.log('Página de Configuração do Simulado detectada');
+    initSimuladoConfig();
+  }
 });
+
+// Função de inicialização específica para a configuração do simulado
+function initSimuladoConfig() {
+  console.log('Inicializando configuração do simulado...');
+  carregarTemas(); // Função que carrega os temas dinamicamente
+}
+
 
 // Inicia o script ao carregar a página
 document.addEventListener('DOMContentLoaded', init);

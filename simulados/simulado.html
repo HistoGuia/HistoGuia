@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulado</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="style-simulados.css">
+</head>
+<body data-page="simulado">
+  <div id="header-placeholder"></div>
+
+  <main class="simulado-container">
+    <h1>Simulado</h1>
+    <section id="questoes-container">
+      <div id="questao-atual"></div>
+      <button id="next-questao" class="simulado-btn">Próxima Questão</button>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../loadHeader.js"></script>
+  <script src="simulado.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const questoesContainer = document.getElementById("questoes-container");
+      const questaoAtualDiv = document.getElementById("questao-atual");
+      const nextButton = document.getElementById("next-questao");
+
+      const simuladoConfig = JSON.parse(localStorage.getItem("simuladoConfig"));
+      if (!simuladoConfig) {
+        alert("Configuração do simulado não encontrada. Retornando...");
+        window.location.href = "configuracao.html";
+        return;
+      }
+
+      let { questoesSelecionadas, tempoPorQuestao } = simuladoConfig;
+      let questaoIndex = 0;
+
+      function mostrarQuestao() {
+        if (questaoIndex >= questoesSelecionadas.length) {
+          alert("Simulado finalizado!");
+          questoesContainer.style.display = "none";
+          return;
+        }
+
+        const questao = questoesSelecionadas[questaoIndex];
+        questaoAtualDiv.innerHTML = `
+          <div class="questao-container">
+            <p>${questao.numero}. ${questao.enunciado || ""}</p>
+            <img src="${questao.imagem}" alt="Questão ${questao.numero}" class="questao-imagem">
+            <ul>
+              ${questao.alternativas
+                .map(
+                  (alt, i) =>
+                    `<li><button>${alt.texto}</button></li>`
+                )
+                .join("")}
+            </ul>
+          </div>
+        `;
+
+        setTimeout(() => {
+          questaoIndex++;
+          mostrarQuestao();
+        }, tempoPorQuestao * 1000);
+      }
+
+      mostrarQuestao();
+
+      nextButton.addEventListener("click", () => {
+        questaoIndex++;
+        mostrarQuestao();
+      });
+    });
+  </script>
+</body>
+</html>

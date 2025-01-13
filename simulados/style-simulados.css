@@ -120,3 +120,41 @@ body {
     }
   }
   
+
+  .questao-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .questao-imagem {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .questao-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .questao-container li {
+    margin: 0.5rem 0;
+  }
+  
+  .questao-container button {
+    padding: 0.5rem 1rem;
+    background-color: #7257fa;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .questao-container button:hover {
+    background-color: #5a47d0;
+  }
+  
