@@ -158,24 +158,28 @@ document.addEventListener("DOMContentLoaded", function () {
       clearInterval(intervalo);
       return;
     }
-
+  
     const questao = questoesSelecionadas[questaoIndex];
+    
+    // Atualiza o HTML para exibir "Questão X"
     questaoAtualDiv.innerHTML = `
-    <div class="questao-container">
-      <p>Questão ${questao.numero}: ${questao.enunciado || "Teste"}</p>
-      <img src="${questao.imagem}" alt="Questão ${questao.numero}" class="questao-imagem">
-      <ul>
-        ${questao.alternativas
-          .map((alt, i) => `<li><button>${alt.texto}</button></li>`)
-          .join("")}
-      </ul>
-    </div>
-  `;
+      <div class="questao-container">
+        <p>Questão ${questaoIndex + 1}: ${questao.enunciado || ""}</p>
+        <img src="${questao.imagem}" alt="Questão ${questaoIndex + 1}" class="questao-imagem">
+        <ul>
+          ${questao.alternativas
+            .map(
+              (alt, i) =>
+                `<li><button>${alt.texto}</button></li>`
+            )
+            .join("")}
+        </ul>
+      </div>
+    `;
   
-  
-
     iniciarTemporizador();
   }
+  
 
   mostrarQuestao();
 

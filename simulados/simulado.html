@@ -62,18 +62,16 @@
         const questao = questoesSelecionadas[questaoIndex];
         questaoAtualDiv.innerHTML = `
           <div class="questao-container">
-            <p>${questao.numero}. ${questao.enunciado || ""}</p>
-            <img src="${questao.imagem}" alt="Questão ${questao.numero}" class="questao-imagem">
+            <p>${questao.enunciado || ""}</p>
+            <img src="${questao.imagem}" alt="Questão" class="questao-imagem">
             <ul>
               ${questao.alternativas
-                .map(
-                  (alt, i) =>
-                    `<li><button>${alt.texto}</button></li>`
-                )
+                .map((alt, i) => `<li><button>${alt.texto}</button></li>`)
                 .join("")}
             </ul>
           </div>
         `;
+
 
         iniciarTemporizador();
       }
