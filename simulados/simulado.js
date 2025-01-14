@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       // Salva a configuração no localStorage
       localStorage.setItem("simuladoConfig", JSON.stringify({
         questoesSelecionadas,
-        tempoPorQuestao
+        tempoPorQuestao,
       }));
 
       // Redireciona para a página do simulado
@@ -111,4 +111,77 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     return todasQuestoes.slice(0, numQuestoes);
   }
+});
+
+// ===== Simulado na Página simulado.html =====
+document.addEventListener("DOMContentLoaded", function () {
+  const questoesContainer = document.getElementById("questoes-container");
+  const questaoAtualDiv = document.getElementById("questao-atual");
+  const contadorTempoDiv = document.getElementById("tempo-restante");
+  const nextButton = document.getElementById("next-questao");
+
+  const simuladoConfig = JSON.parse(localStorage.getItem("simuladoConfig"));
+  if (!simuladoConfig) {
+    alert("Configuração do simulado não encontrada. Retornando...");
+    window.location.href = "configuracao.html";
+    return;
+  }
+
+  let { questoesSelecionadas, tempoPorQuestao } = simuladoConfig;
+  let questaoIndex = 0;
+  let intervalo;
+
+  function atualizarContador(tempoRestante) {
+    contadorTempoDiv.textContent = tempoRestante;
+  }
+
+  function iniciarTemporizador() {
+    let tempoRestante = tempoPorQuestao;
+    atualizarContador(tempoRestante);
+
+    intervalo = setInterval(() => {
+      tempoRestante--;
+      atualizarContador(tempoRestante);
+
+      if (tempoRestante <= 0) {
+        clearInterval(intervalo);
+        questaoIndex++;
+        mostrarQuestao();
+      }
+    }, 1000);
+  }
+
+  function mostrarQuestao() {
+    if (questaoIndex >= questoesSelecionadas.length) {
+      alert("Simulado finalizado!");
+      questoesContainer.style.display = "none";
+      clearInterval(intervalo);
+      return;
+    }
+
+    const questao = questoesSelecionadas[questaoIndex];
+    questaoAtualDiv.innerHTML = `
+    <div class="questao-container">
+      <p>Questão ${questao.numero}: ${questao.enunciado || "Teste"}</p>
+      <img src="${questao.imagem}" alt="Questão ${questao.numero}" class="questao-imagem">
+      <ul>
+        ${questao.alternativas
+          .map((alt, i) => `<li><button>${alt.texto}</button></li>`)
+          .join("")}
+      </ul>
+    </div>
+  `;
+  
+  
+
+    iniciarTemporizador();
+  }
+
+  mostrarQuestao();
+
+  nextButton.addEventListener("click", () => {
+    clearInterval(intervalo);
+    questaoIndex++;
+    mostrarQuestao();
+  });
 });

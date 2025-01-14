@@ -12,6 +12,12 @@
 
   <main class="simulado-container">
     <h1>Simulado</h1>
+    
+    <!-- Contador de Tempo -->
+    <div id="contador-tempo" class="contador-tempo">
+      Tempo restante: <span id="tempo-restante">--</span> segundos
+    </div>
+
     <section id="questoes-container">
       <div id="questao-atual"></div>
       <button id="next-questao" class="simulado-btn">Próxima Questão</button>
@@ -26,6 +32,7 @@
       const questoesContainer = document.getElementById("questoes-container");
       const questaoAtualDiv = document.getElementById("questao-atual");
       const nextButton = document.getElementById("next-questao");
+      const contadorTempo = document.getElementById("tempo-restante");
 
       const simuladoConfig = JSON.parse(localStorage.getItem("simuladoConfig"));
       if (!simuladoConfig) {
@@ -36,11 +43,19 @@
 
       let { questoesSelecionadas, tempoPorQuestao } = simuladoConfig;
       let questaoIndex = 0;
+      let intervalo;
 
+      // Atualiza o contador de tempo
+      function atualizarContador(tempoRestante) {
+        contadorTempo.textContent = tempoRestante;
+      }
+
+      // Mostra a questão e inicia o temporizador
       function mostrarQuestao() {
         if (questaoIndex >= questoesSelecionadas.length) {
           alert("Simulado finalizado!");
           questoesContainer.style.display = "none";
+          clearInterval(intervalo);
           return;
         }
 
@@ -60,15 +75,30 @@
           </div>
         `;
 
-        setTimeout(() => {
-          questaoIndex++;
-          mostrarQuestao();
-        }, tempoPorQuestao * 1000);
+        iniciarTemporizador();
+      }
+
+      // Inicia o temporizador da questão
+      function iniciarTemporizador() {
+        let tempoRestante = tempoPorQuestao;
+        atualizarContador(tempoRestante);
+
+        intervalo = setInterval(() => {
+          tempoRestante--;
+          atualizarContador(tempoRestante);
+
+          if (tempoRestante <= 0) {
+            clearInterval(intervalo);
+            questaoIndex++;
+            mostrarQuestao();
+          }
+        }, 1000);
       }
 
       mostrarQuestao();
 
       nextButton.addEventListener("click", () => {
+        clearInterval(intervalo);
         questaoIndex++;
         mostrarQuestao();
       });
